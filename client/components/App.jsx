@@ -1,9 +1,21 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
-const App = () => {
+const App = (props) => {
+
   return (
-    <h1>React development has begun!</h1>
+    <div className=''>
+      <h1>DERACISTING RUNES YO</h1>
+        <Header navigation={props.navigation} />
+        {props.navigation === 'spread'} ? <Spread /> : <Journal />
+    </div>
   )
 }
 
-export default App
+const mapStateToProps = (state) => {
+  return {
+    navigation: state.navigation
+  }
+}
+
+export default App connect(mapStateToProps)(App)
