@@ -1,13 +1,18 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
+import Header from './Header'
+import Spread from './Spread'
+
+
+
 const App = (props) => {
 
   return (
     <div className=''>
-      <h1>DERACISTING RUNES YO</h1>
         <Header navigation={props.navigation} />
-        {props.navigation === 'spread'} ? <Spread /> : <Journal />
+        <Spread />
+        {/* {props.navigation === 'spread'} ? <Spread /> : <Journal /> */}
     </div>
   )
 }
@@ -18,4 +23,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default App connect(mapStateToProps)(App)
+export default connect(mapStateToProps)(App)
