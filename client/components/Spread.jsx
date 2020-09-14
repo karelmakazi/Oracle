@@ -12,7 +12,6 @@ class Spread extends React.Component {
   }
 
   render() {
-    console.log(this.props.runeList);
     return (
       <Rune />
     )

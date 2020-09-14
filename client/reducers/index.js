@@ -6,5 +6,8 @@ import runeList from './runeList'
 
 export default combineReducers({
   navigation,
-  runeList
+  runeList,
+  situation,
+  challenge,
+  action,
 })
