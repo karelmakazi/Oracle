@@ -1,28 +1,51 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import RuneSelection from './RuneSelection'
 import RuneDetail from './RuneDetail'
 
 class Rune extends React.Component {
   state = {
-    selectedRune: {
-      name:'Fehu',
-      reversible:true
-    },
-    selectedAspect: ''
+    selRuneId: null,
+    selRuneName: '',
+    selRuneReverse: null,
+  }
+
+  onSelect(rune) {
+    this.setState({
+      selRuneId: rune.id,
+      selRuneName: rune.name,
+      selRuneReverse: rune.reversible,
+    })
   }
 
   render() {
+    const runeList = this.props.runeList
+
     return (
       <div className=''>
-        {!this.state.selectedRune
-          ? <RuneSelection />
-          : <RuneDetail selected={this.state.selectedRune} />}
+        {!this.state.selRuneId
+          ? runeList.runes.map((rune, key) => {
+            return (
+              <button className=''
+                key={key}
+                onClick={() => this.onSelect(rune)}>
+                {rune.name}
+              </button>
+            )
+          })
+          : <RuneDetail rune={this.state} />
+        }
       </div>
+
     )
   }
 }
 
 
-export default connect()(Rune)
+const mapStateToProps = (state) => {
+  return {
+    runeList: state.runeList
+  }
+}
+
+export default connect(mapStateToProps)(Rune)
