@@ -3,161 +3,161 @@ export default {
     {
       id: 1,
       name: 'Fehu',
-      image: '',
+      image: 'f',
       meaning: '',
       reversible: true
     },
     {
       id: 2,
       name: 'Uruz',
-      image: '',
+      image: 'u',
       meaning: '',
       reversible: true
     },
     {
       id: 3,
       name: 'Thurisaz',
-      image: '',
+      image: 'T',
       meaning: '',
       reversible: true
     },
     {
       id: 4,
       name: 'Ansuz',
-      image: '',
+      image: 'a',
       meaning: '',
       reversible: true
     },
     {
       id: 5,
       name: 'Raido',
-      image: '',
+      image: 'r',
       meaning: '',
       reversible: true
     },
     {
       id: 6,
       name: 'Kano',
-      image: '',
+      image: 'k',
       meaning: '',
       reversible: true
     },
     {
       id: 7,
       name: 'Gebo',
-      image: '',
+      image: 'g',
       meaning: '',
       reversible: false
     },
     {
       id: 8,
       name: 'Wunjo',
-      image: '',
+      image: 'w',
       meaning: '',
       reversible: true
     },
     {
       id: 9,
       name: 'Hagalaz',
-      image: '',
+      image: 'h',
       meaning: '',
       reversible: false
     },
     {
       id: 10,
       name: 'Nauthiz',
-      image: '',
+      image: 'n',
       meaning: '',
       reversible: true
     },
     {
       id: 11,
       name: 'Isa',
-      image: '',
+      image: 'i',
       meaning: '',
       reversible: false
     },
     {
       id: 12,
       name: 'Jera',
-      image: '',
+      image: 'j',
       meaning: '',
       reversible: false
     },
     {
       id: 13,
       name: 'Eihwaz',
-      image: '',
+      image: 'I',
       meaning: '',
       reversible: false
     },
     {
       id: 14,
       name: 'Perth',
-      image: '',
+      image: 'p',
       meaning: '',
       reversible: true
     },
     {
       id: 15,
       name: 'Algiz',
-      image: '',
+      image: 'z',
       meaning: '',
       reversible: true
     },
     {
       id: 16,
       name: 'Sowelo',
-      image: '',
+      image: 's',
       meaning: '',
       reversible: false
     },
     {
       id: 17,
       name: 'Teiwaz',
-      image: '',
+      image: 't',
       meaning: '',
       reversible: true
     },
     {
       id: 18,
       name: 'Berkana',
-      image: '',
+      image: 'b',
       meaning: '',
       reversible: true
     },
     {
       id: 19,
       name: 'Ehwaz',
-      image: '',
+      image: 'e',
       meaning: '',
       reversible: true
     },
     {
       id: 20,
       name: 'Mannaz',
-      image: '',
+      image: 'm',
       meaning: '',
       reversible: true
     },
     {
       id: 21,
       name: 'Laguz',
-      image: '',
+      image: 'l',
       meaning: '',
       reversible: true
     },
     {
       id: 22,
       name: 'Inguz',
-      image: '',
+      image: 'N',
       meaning: '',
       reversible: false
     },
     {
       id: 23,
       name: 'Dagaz',
-      image: '',
+      image: 'd',
       meaning: '',
       reversible: false
     },
@@ -171,7 +171,7 @@ export default {
     {
       id: 25,
       name: 'Blank',
-      image: '',
+      image: 'o',
       meaning: '',
       reversible: false
     }

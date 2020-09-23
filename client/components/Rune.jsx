@@ -18,6 +18,14 @@ class Rune extends React.Component {
     })
   }
 
+  clearSelection = () => {
+    this.setState({
+      selRuneId: null,
+      selRuneName: '',
+      selRuneReverse: null,
+    })
+  }
+
   render() {
     const runeList = this.props.runeList
 
@@ -33,7 +41,9 @@ class Rune extends React.Component {
               </button>
             )
           })
-          : <RuneDetail rune={this.state} />
+          : <RuneDetail 
+            rune={this.state} 
+            clear={this.clearSelection}/>
         }
       </div>
 

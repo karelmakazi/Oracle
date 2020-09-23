@@ -49,12 +49,17 @@ class RuneDetail extends React.Component {
     return (
       <>
         <h3>SELECTION: {rune.selRuneName}</h3>
+        <div className='runeImage'>
+          
+        </div>
         {rune.selRuneReverse
           ? <button onClick={() => { this.aspectSwap(buttonText, currentAspect) }}>
             {this.state.revButtonText}
             </button>
           : null}
-          
+          <button onClick={() => this.props.clear()}>Clear</button>
+        
+
       </>
     )
   }
@@ -62,4 +67,12 @@ class RuneDetail extends React.Component {
 
 export default connect()(RuneDetail)
 
-//WILL DISPATCH ACTION
+//WILL DISPATCH ACTION   
+
+
+
+
+
+
+
+
