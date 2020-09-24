@@ -14,6 +14,7 @@ class Rune extends React.Component {
     this.setState({
       selRuneId: rune.id,
       selRuneName: rune.name,
+      selRuneImage: rune.image,
       selRuneReverse: rune.reversible,
     })
   }
