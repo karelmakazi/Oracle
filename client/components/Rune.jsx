@@ -23,6 +23,7 @@ class Rune extends React.Component {
     this.setState({
       selRuneId: null,
       selRuneName: '',
+      selRuneImage: '',
       selRuneReverse: null,
     })
   }

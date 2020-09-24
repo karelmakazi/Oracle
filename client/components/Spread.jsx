@@ -13,7 +13,11 @@ class Spread extends React.Component {
 
   render() {
     return (
+      <>
       <Rune />
+      <Rune />
+      <Rune />
+      </>
     )
   }
 }

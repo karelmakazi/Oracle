@@ -16,8 +16,8 @@ class RuneDetail extends React.Component {
 
   runeToState(rune){
    this.setState({
-    selRuneId: rune.id,
-    selRuneName: rune.name,
+    selRuneId: rune.selRuneId,
+    selRuneName: rune.selRuneName,
    })
   }
 
@@ -63,6 +63,7 @@ class RuneDetail extends React.Component {
             </button>
           : null}
           <button onClick={() => this.props.clear()}>Clear</button>
+          <button onClick={() => this.runeToState(rune)}>Commit</button>
         
 
       </>
