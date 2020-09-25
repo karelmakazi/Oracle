@@ -30,6 +30,7 @@ class Rune extends React.Component {
 
   render() {
     const runeList = this.props.runeList
+    const runePos = this.props.pos
 
     return (
       <div className=''>
@@ -45,14 +46,15 @@ class Rune extends React.Component {
           })
           : <RuneDetail 
             rune={this.state} 
-            clear={this.clearSelection}/>
+            clear={this.clearSelection}
+            pos={runePos}
+            />
         }
       </div>
 
     )
   }
 }
-
 
 const mapStateToProps = (state) => {
   return {

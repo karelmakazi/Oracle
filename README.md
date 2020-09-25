@@ -1,14 +1,9 @@
-# A starter webpack project for React
+# RUNE LOG
 
-This is a starter project that uses webpack to transpile and bundle ES6 React code. To use, consider these steps:
+This is app is intended to help new rune users learn the practice with a simple spread recording function coupled with a daily reflection journal. 
 
-* Fork this repo
-* Rename your repo according to the app you're building
-
-```sh
-git clone https://github.com/[your-account]/[your-app].git
-cd [your-app] && npm i
-```
+## How to use
+Clone the repo, and run npm install. 
 
 To start the development server with a watcher that rebuilds your code, run `npm run dev`. The assets built by webpack are placed in `server/public`. This folder is defined as a static folder in an Express.js server that can be started with `npm run server`.
 

@@ -1,27 +1,24 @@
 import React from 'react'
+import { addRune } from '../actions'
 import { connect } from 'react-redux'
 
 class RuneDetail extends React.Component {
   state = {
-    selRuneId: null,
-    selRuneName: '',
+    selRuneId: this.props.rune.selRuneId,
+    selRuneName: this.props.rune.selRuneName,
     selRuneAspect: 'normal',
-    revButtonText: 'Reverse'
+    revButtonText: 'Reverse',
+    runeCommited: false
   }
 
-
-  onReverse(response) {
-    this.aspectSwap(this.state.revButtonText)
+  submitRune(props) {
+    this.setState({
+      runeCommited: true
+    })
+    props.dispatch(addRune(this.props.pos, this.state))
   }
 
-  runeToState(rune){
-   this.setState({
-    selRuneId: rune.selRuneId,
-    selRuneName: rune.selRuneName,
-   })
-  }
-
-
+  //REFACTOR
   aspectSwap(button, current) {
     let newButtonText = ''
     let newRuneAspect = ''
@@ -49,7 +46,6 @@ class RuneDetail extends React.Component {
     const runeImageStyle = this.state.revButtonText === 'Reverse' 
       ? 'runeImage'
       : 'runeImage runeReversed'
-
     
     return (
       <>
@@ -62,10 +58,12 @@ class RuneDetail extends React.Component {
             {this.state.revButtonText}
             </button>
           : null}
-          <button onClick={() => this.props.clear()}>Clear</button>
-          <button onClick={() => this.runeToState(rune)}>Commit</button>
+        <button onClick={() => this.props.clear()}>Clear</button>
+        {!this.state.runeCommited
+        ? <button onClick={() => this.submitRune(this.props)}>Commit</button>
+        : null
+        }
         
-
       </>
     )
   }

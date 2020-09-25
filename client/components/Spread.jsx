@@ -5,21 +5,23 @@ import Rune from './Rune'
 
 class Spread extends React.Component {
   state = {
-    position1: {},
-    position2: {},
-    position3: {},
+    position1: '',
+    position2: '',
+    position3: '',
     date: {}
   }
 
   render() {
     return (
       <>
-      <Rune />
-      <Rune />
-      <Rune />
+      <Rune pos={'1'}/>
+      <Rune pos={'2'}/>
+      <Rune pos={'3'}/>
       </>
     )
   }
 }
 
 export default Spread 
+
+//ADD API to write to database
