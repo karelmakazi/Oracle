@@ -164,14 +164,14 @@ export default {
     {
       id: 24,
       name: 'Othila',
-      image: '',
+      image: 'o',
       meaning: '',
       reversible: true
     },
     {
       id: 25,
       name: 'Blank',
-      image: 'o',
+      image: '',
       meaning: '',
       reversible: false
     }
