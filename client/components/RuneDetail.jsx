@@ -1,5 +1,5 @@
 import React from 'react'
-import { addRune } from '../actions'
+import { addRune, updateRuneList } from '../actions'
 import { connect } from 'react-redux'
 
 class RuneDetail extends React.Component {
@@ -16,6 +16,7 @@ class RuneDetail extends React.Component {
       runeCommited: true
     })
     props.dispatch(addRune(this.props.pos, this.state))
+    props.dispatch(updateRuneList(this.state.selRuneName, this.props.runeList))
   }
 
   //REFACTOR
@@ -53,15 +54,17 @@ class RuneDetail extends React.Component {
           {rune.selRuneImage}
         </div>
         <h3>{rune.selRuneName}</h3>
-        {rune.selRuneReverse
-          ? <button onClick={() => { this.aspectSwap(buttonText, currentAspect) }}>
-            {this.state.revButtonText}
-            </button>
-          : null}
-        <button onClick={() => this.props.clear()}>Clear</button>
         {!this.state.runeCommited
-        ? <button onClick={() => this.submitRune(this.props)}>Commit</button>
-        : null
+          ? <>
+            {rune.selRuneReverse
+            ? <button onClick={() => { this.aspectSwap(buttonText, currentAspect) }}>
+              {this.state.revButtonText}</button>
+            : null}
+            <button onClick={() => this.props.clear()}>Clear</button>  
+            <button onClick={() => this.submitRune(this.props)}>Commit</button>
+
+            </>
+          : null
         }
         
       </>
@@ -69,9 +72,14 @@ class RuneDetail extends React.Component {
   }
 }
 
-export default connect()(RuneDetail)
+const mapStateToProps = (state) => {
+  return {
+    runeList: state.runeList
+  }
+}
 
-//WILL DISPATCH ACTION   
+export default connect(mapStateToProps)(RuneDetail)
+
 
 
 

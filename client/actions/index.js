@@ -1,10 +1,17 @@
-
+import runeList from "../reducers/runeList";
 
 export const addRune = (position, rune) => {
-  console.log('Pos', position);
-  console.log('Rune', rune);
+
   return {
-    type: 'RUNEATION',
+    type: `RUNE_POSITION_${position}`,
     rune: rune
+  }
+}
+
+export const updateRuneList = (rune, passedList) => {
+  return {
+    type: 'UPDATE_RUNELIST',
+    selRune: rune,
+    passedList: passedList
   }
 }
