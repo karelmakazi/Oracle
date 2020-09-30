@@ -7,11 +7,11 @@ class Spread extends React.Component {
 
   spreadToDatabase(){
     let spreadObject = {
-        position1: this.props.spreadPos1,
-        position2: this.props.spreadPos2,
-        position3: this.props.spreadPos3
+        position1: this.props.spreadPos1.runePosition1,
+        position2: this.props.spreadPos2.runePosition2,
+        position3: this.props.spreadPos3.runePosition3
     }
-    console.log('TO THE DB HOOO', spreadObject);
+    console.log('TO THE DB HOOO', spreadObject.position1);
   }
 
 
@@ -20,13 +20,14 @@ class Spread extends React.Component {
     return (
       <>
       <Rune pos={'1'}/>
+      <hr></hr>
       <Rune pos={'2'}/>
+      <hr></hr>
       <Rune pos={'3'}/>
       <hr></hr>
       {
         this.props.spreadPos3
-        ? <button onClick={() => this.spreadToDatabase()}> 
-            SAVE READING </button>
+        ? <button onClick={() => this.spreadToDatabase()}> SAVE READING </button>
         : null
       }
       </>

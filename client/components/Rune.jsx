@@ -34,7 +34,6 @@ class Rune extends React.Component {
 
     return (
       <div className=''>
-        <h3> Selection: {runePos}</h3>
         {!this.state.selRuneId
           ? runeList.runes.map((rune, key) => {
             return (
