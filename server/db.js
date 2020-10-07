@@ -2,12 +2,20 @@ const config = require('../knexfile').development
 const db = require('knex')(config)
 
 module.exports = {
+  getJournalSpread,
   addSpread
 }
 
+function getJournalSpread(){
+  return db('spreads')
+  .select()
+  .where('journal', 'empty')
+  .first()
+  .then(res => { return res})
+  .catch(err => (console.log(err)))
+}
 
 function addSpread (spread) {
-  console.log('SUP', spread);
   return db('spreads')
   .insert({
     pos1_rune: spread.pos1_rune,

@@ -1,12 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 
 import Header from './Header'
 import Spread from './Spread'
 
+import { getJournalSpread } from '../api'
+ 
 
 
 const App = (props) => {
+
+  useEffect(()=>{
+    getJournalSpread()
+    .then(res => console.log('hello', res))}
+  )
 
   return (
     <div className=''>
