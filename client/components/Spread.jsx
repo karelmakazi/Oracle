@@ -3,10 +3,12 @@ import { connect } from 'react-redux'
 
 import Rune from './Rune'
 
+import { addSpread } from '../api'
+
 class Spread extends React.Component {
 
   spreadToDatabase(){
-    //REFACTOR
+    //REFACTOR OUT
     const spreadPos1 = this.props.spreadPos1.runePosition1
     const spreadPos2 = this.props.spreadPos2.runePosition2
     const spreadPos3 = this.props.spreadPos3.runePosition3
@@ -19,6 +21,9 @@ class Spread extends React.Component {
       pos3_rune: spreadPos3.selRuneName,
       pos3_aspect: spreadPos3.selRuneAspect,
     }
+
+    addSpread(spreadObject)
+    .then(res => console.log('A new Spread has been added.', res[0]))
   }
 
   render() {

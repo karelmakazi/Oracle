@@ -18,5 +18,6 @@ function addSpread (spread) {
     pos3_aspect: spread.pos3_aspect,
     journal: 'empty',
   })
-  .catch(res.sendStatus(500))
+  .then(id => {return id})
+  .catch(err => (console.log(err)))
 }
