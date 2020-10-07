@@ -6,14 +6,20 @@ import Rune from './Rune'
 class Spread extends React.Component {
 
   spreadToDatabase(){
-    let spreadObject = {
-        position1: this.props.spreadPos1.runePosition1,
-        position2: this.props.spreadPos2.runePosition2,
-        position3: this.props.spreadPos3.runePosition3
-    }
-    console.log('TO THE DB HOOO', spreadObject.position1);
-  }
+    //REFACTOR
+    const spreadPos1 = this.props.spreadPos1.runePosition1
+    const spreadPos2 = this.props.spreadPos2.runePosition2
+    const spreadPos3 = this.props.spreadPos3.runePosition3
 
+    let spreadObject = {
+      pos1_rune: spreadPos1.selRuneName,
+      pos1_aspect: spreadPos1.selRuneAspect,
+      pos2_rune: spreadPos2.selRuneName,
+      pos2_aspect: spreadPos2.selRuneAspect,
+      pos3_rune: spreadPos3.selRuneName,
+      pos3_aspect: spreadPos3.selRuneAspect,
+    }
+  }
 
   render() {
 
