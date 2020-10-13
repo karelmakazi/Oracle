@@ -1,33 +1,43 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 
-import Header from './Header'
 import Spread from './Spread'
 
 import { getJournalSpread } from '../api'
- 
 
 
-const App = (props) => {
+class App extends React.Component {
+  state = {
+    spread:null
+  }
 
-  useEffect(()=>{
-    getJournalSpread()
-    .then(res => console.log('hello', res))}
-  )
+  componentDidMount(){
+    this.fetchLastSpread()
+  }
 
-  return (
-    <div className=''>
-        <Header navigation={props.navigation} />
-        <Spread />
-        {/* {props.navigation === 'spread'} ? <Spread /> : <Journal /> */}
-    </div>
-  )
-}
+  fetchLastSpread(){
+    return getJournalSpread()
+    .then(spread => {
+      this.setState({
+        spread: spread
+      })
+    })
+  }
 
-const mapStateToProps = (state) => {
-  return {
-    navigation: state.navigation
+  render() {
+    let spreadObj = this.state.spread
+
+    return (
+      <div className=''>
+        {spreadObj 
+        ? spreadObj.journal != 'empty' 
+          ? <h1>Journal</h1>
+          : <h1>No Journal</h1>
+        : null}
+        {/* <Spread /> */}
+      </div>
+    ) 
   }
 }
 
-export default connect(mapStateToProps)(App)
+export default App

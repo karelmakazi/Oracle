@@ -1,7 +1,7 @@
 import request from 'superagent'
 
 export function getJournalSpread(){
-  return request.get('/')
+  return request.get('/v1/spreads')
   .then(res => { return res.body } )
   .catch( err => console.log(err))
 }
