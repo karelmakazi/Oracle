@@ -9,7 +9,8 @@ module.exports = {
 function getJournalSpread(){
   return db('spreads')
   .select()
-  .where('journal', 'empty')
+  .orderBy('timestamp', 'desc')
+  .limit(1)
   .first()
   .then(res => { return res})
   .catch(err => (console.log(err)))
