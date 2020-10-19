@@ -6,6 +6,7 @@ class RuneDetail extends React.Component {
   state = {
     selRuneId: this.props.rune.selRuneId,
     selRuneName: this.props.rune.selRuneName,
+    selRuneImage: this.props.rune.selRuneImage,
     selRuneAspect: 'normal',
     revButtonText: 'Reverse',
     runeCommited: false

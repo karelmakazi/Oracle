@@ -15,10 +15,13 @@ class Spread extends React.Component {
 
     let spreadObject = {
       pos1_rune: spreadPos1.selRuneName,
+      pos1_image:spreadPos1.selRuneImage,
       pos1_aspect: spreadPos1.selRuneAspect,
       pos2_rune: spreadPos2.selRuneName,
+      pos2_image:spreadPos2.selRuneImage,
       pos2_aspect: spreadPos2.selRuneAspect,
       pos3_rune: spreadPos3.selRuneName,
+      pos3_image:spreadPos3.selRuneImage,
       pos3_aspect: spreadPos3.selRuneAspect,
     }
 
@@ -26,8 +29,11 @@ class Spread extends React.Component {
     .then(res => console.log('A new Spread has been added.', res[0]))
   }
 
-  render() {
 
+
+  
+
+  render() {
     return (
       <>
       <Rune pos={'1'}/>

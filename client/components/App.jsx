@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 import Spread from './Spread'
+import Journal from './Journal'
 
 import { getJournalSpread } from '../api'
 
@@ -31,10 +32,9 @@ class App extends React.Component {
       <div className=''>
         {spreadObj 
         ? spreadObj.journal != 'empty' 
-          ? <h1>Journal</h1>
-          : <h1>No Journal</h1>
+          ? <Spread />
+          : <Journal spread={spreadObj}/>
         : null}
-        {/* <Spread /> */}
       </div>
     ) 
   }
