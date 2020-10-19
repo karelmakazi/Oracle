@@ -36,6 +36,7 @@ class Spread extends React.Component {
   render() {
     return (
       <>
+      <h1>Enter Your Spread</h1>
       <Rune pos={'1'}/>
       <hr></hr>
       <Rune pos={'2'}/>

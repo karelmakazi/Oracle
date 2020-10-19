@@ -3,14 +3,20 @@ import React from 'react'
 class Journal extends React.Component {
 
   state = {
-
+    journal:''
   }
 
+  handleChange(event){
+    this.setState({
+      [event.target.name]: event.target.value
+     })
+   }
+
   render () {
-   console.log(this.props.spread);
     const retrievedSpread = this.props.spread
     return(
       <>
+        <h1>Enter Your Journal</h1>
         <div className ='journalSymbolHolder'>
           <div className='journalSymbol'>
             {retrievedSpread.pos1_rune}
@@ -23,14 +29,12 @@ class Journal extends React.Component {
           </div>
         </div>
         <div>
-          <form>
-            <input type='text'></input>
+            <textarea name='journal' value={this.state.journal}
+              onChange={(e) => this.handleChange(e)}></textarea>
             <button>Submit</button>
-          </form>
         </div>
       </>
     )
   }
 }
-
 export default Journal
