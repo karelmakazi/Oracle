@@ -45,6 +45,7 @@ class RuneDetail extends React.Component {
     const rune = this.props.rune
     const buttonText = this.state.revButtonText
     const currentAspect = this.state.selRuneAspect
+    //CSS: Styling to show Rune and reverse if needed. Refactor out
     const runeImageStyle = this.state.revButtonText === 'Reverse' 
       ? 'runeImage'
       : 'runeImage runeReversed'
