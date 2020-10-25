@@ -26,7 +26,7 @@ class Spread extends React.Component {
     }
 
     addSpread(spreadObject)
-    .then(res => console.log('A new Spread has been added.', res[0]))
+    .then(res => res.redirect('http://google.com'))
   }
 
 

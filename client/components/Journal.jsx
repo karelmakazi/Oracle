@@ -1,7 +1,10 @@
 import React from 'react'
 
-class Journal extends React.Component {
+import { addJournal } from '../api'
 
+
+class Journal extends React.Component {
+  
   state = {
     journal:''
   }
@@ -12,11 +15,17 @@ class Journal extends React.Component {
      })
    }
 
-   
+   //To Lib file
+   journalToDatabase(id){
+     let journalObject = {
+       id,
+       journal:this.state.journal
+     }
+     addJournal(journalObject)
+   }
 
   render () {
     const retSpread = this.props.spread
-
     const runeImageStyle = (name) => (name === 'reversed') 
       ? 'runeImage runeReversed' : 'runeImage'
 
@@ -37,7 +46,7 @@ class Journal extends React.Component {
         <div>
             <textarea name='journal' value={this.state.journal}
               onChange={(e) => this.handleChange(e)}></textarea>
-            <button>Submit</button>
+            <button onClick ={() => this.journalToDatabase(retSpread.spread_id)}>Save Journal</button>
         </div>
       </>
     )

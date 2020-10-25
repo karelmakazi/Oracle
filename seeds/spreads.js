@@ -25,7 +25,7 @@ exports.seed = (knex) => {
         pos3_rune: 'Algiz', 
         pos3_aspect:'normal',
         pos3_image:'z', 
-        journal:'journaled'
+        journal:'empty'
         },
       ]);
     });

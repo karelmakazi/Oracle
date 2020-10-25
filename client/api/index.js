@@ -12,3 +12,9 @@ export function addSpread(spreadObject) {
   .then( res => {return res.body})
   .catch(err => console.log(err))
 }
+
+export function addJournal(journalObject){
+  return request.post('v1/spreads/addJournal')
+  .send(journalObject)
+  .catch(err => console.log(err))
+}

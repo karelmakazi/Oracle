@@ -3,7 +3,8 @@ const db = require('knex')(config)
 
 module.exports = {
   getJournalSpread,
-  addSpread
+  addSpread,
+  addJournal
 }
 
 function getJournalSpread(){
@@ -31,5 +32,12 @@ function addSpread (spread) {
     journal: 'empty',
   })
   .then(id => {return id})
+  .catch(err => (console.log(err)))
+}
+
+function addJournal(id, journal){
+  return db('spreads')
+  .update({journal: journal})
+  .where('spread_id', id)
   .catch(err => (console.log(err)))
 }
