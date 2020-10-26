@@ -5,61 +5,42 @@ import { connect } from 'react-redux'
 import Rune from './Rune'
 
 import { addSpread } from '../api'
+import { spreadMaker } from '../lib'
 
 class Spread extends React.Component {
-
-  spreadToDatabase(){
-    //REFACTOR OUT
-    const spreadPos1 = this.props.spreadPos1.runePosition1
-    const spreadPos2 = this.props.spreadPos2.runePosition2
-    const spreadPos3 = this.props.spreadPos3.runePosition3
-
-    let spreadObject = {
-      pos1_rune: spreadPos1.selRuneName,
-      pos1_image:spreadPos1.selRuneImage,
-      pos1_aspect: spreadPos1.selRuneAspect,
-      pos2_rune: spreadPos2.selRuneName,
-      pos2_image:spreadPos2.selRuneImage,
-      pos2_aspect: spreadPos2.selRuneAspect,
-      pos3_rune: spreadPos3.selRuneName,
-      pos3_image:spreadPos3.selRuneImage,
-      pos3_aspect: spreadPos3.selRuneAspect,
-    }
-
+  spreadToDatabase() {
+    let spreadObject = spreadMaker(this.props)
     addSpread(spreadObject)
   }
-
 
   render() {
     return (
       <>
-      <h1>Enter Your Spread</h1>
-      <Rune pos={'1'}/>
-      <hr></hr>
-      <Rune pos={'2'}/>
-      <hr></hr>
-      <Rune pos={'3'}/>
-      <hr></hr>
-      {
-        this.props.spreadPos3
-        ? <Link to={'/feedback/spread'} onClick={() => this.spreadToDatabase()}>SAVE ME</Link>
-        : null
-      }
+        <h1>Enter Your Spread</h1>
+        <Rune pos={'1'} />
+        <hr></hr>
+        <Rune pos={'2'} />
+        <hr></hr>
+        <Rune pos={'3'} />
+        <hr></hr>
+        {this.props.spreadPos3 ? (
+          <Link to={'/feedback/spread'} 
+            onClick={() => this.spreadToDatabase()}>
+            SAVE ME
+          </Link>
+        ) : null}
       </>
     )
   }
 }
 
 const mapStateToProps = (state) => {
-  return{
+  return {
     currentSpread: state.runePosition,
     spreadPos1: state.runePosition[0],
     spreadPos2: state.runePosition[1],
-    spreadPos3: state.runePosition[2]
+    spreadPos3: state.runePosition[2],
   }
 }
 
-export default connect(mapStateToProps)(Spread) 
-
-
-// ? <button onClick={() => this.spreadToDatabase()}> SAVE READING </button>
+export default connect(mapStateToProps)(Spread)

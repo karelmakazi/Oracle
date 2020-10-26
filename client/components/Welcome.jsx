@@ -1,26 +1,23 @@
 import React from 'react'
-import { connect } from 'react-redux'
 
 import Spread from './Spread'
 import Journal from './Journal'
 
 import { getJournalSpread } from '../api'
 
-
 class Welcome extends React.Component {
   state = {
-    spread:null
+    spread: null,
   }
 
-  componentDidMount(){
+  componentDidMount() {
     this.fetchLastSpread()
   }
 
-  fetchLastSpread(){
-    return getJournalSpread()
-    .then(spread => {
+  fetchLastSpread() {
+    return getJournalSpread().then((spread) => {
       this.setState({
-        spread: spread
+        spread: spread,
       })
     })
   }
@@ -29,15 +26,14 @@ class Welcome extends React.Component {
     let spreadObj = this.state.spread
 
     return (
-      <div className=''>
-      <h1>WELCOME</h1>
+      <div className="">
         {spreadObj 
-        ? spreadObj.journal != 'empty' 
-          ? <Spread />
-          : <Journal spread={spreadObj}/>
-        : null}
+          ? (spreadObj.journal != 'empty' 
+                ? (<Spread />) 
+                : (<Journal spread={spreadObj} />)) 
+          : null}
       </div>
-    ) 
+    )
   }
 }
 
