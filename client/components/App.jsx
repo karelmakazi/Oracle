@@ -1,43 +1,16 @@
 import React from 'react'
-import { connect } from 'react-redux'
+import { Route } from 'react-router-dom'
 
-import Spread from './Spread'
-import Journal from './Journal'
+import Welcome from './Welcome'
+import Feedback from './Feedback'
 
-import { getJournalSpread } from '../api'
-
-
-class App extends React.Component {
-  state = {
-    spread:null
-  }
-
-  componentDidMount(){
-    this.fetchLastSpread()
-  }
-
-  fetchLastSpread(){
-    return getJournalSpread()
-    .then(spread => {
-      this.setState({
-        spread: spread
-      })
-    })
-  }
-
-  render() {
-    let spreadObj = this.state.spread
-
-    return (
-      <div className=''>
-        {spreadObj 
-        ? spreadObj.journal != 'empty' 
-          ? <Spread />
-          : <Journal spread={spreadObj}/>
-        : null}
-      </div>
-    ) 
-  }
+const App = ()=> {
+  return (
+    <div>
+      <Route exact path='/' component={Welcome} />
+      <Route exact path='/feedback/:source' component={Feedback} />
+    </div>
+  )
 }
 
 export default App

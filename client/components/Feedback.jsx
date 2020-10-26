@@ -1,11 +1,15 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 const Feedback = props => {
-  const feedbackStatus = 'spread'
+  const feedbackSource = props.match.params.source
+  console.log('REQPARAMS:', feedbackSource)
+
 
   return (
     <div className=''>
-      <h2>{feedbackStatus}</h2>
+      <h1>Your {feedbackSource} has been saved.</h1>
+      <Link to={'/'}>HOME</Link>
     </div>
   )
 }

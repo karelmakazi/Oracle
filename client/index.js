@@ -2,6 +2,7 @@ import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
+import {HashRouter as Router} from 'react-router-dom'
 
 import reducers from './reducers'
 
@@ -13,9 +14,11 @@ const store = createStore(reducers,
 
 document.addEventListener('DOMContentLoaded', () => {
   render(
-    <Provider store={store}>
-      <App />
-    </Provider>,
+    <Router>
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </Router>,
     document.getElementById('app')
   )
 })

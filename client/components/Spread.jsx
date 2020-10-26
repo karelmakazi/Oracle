@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 import Rune from './Rune'
@@ -26,12 +27,8 @@ class Spread extends React.Component {
     }
 
     addSpread(spreadObject)
-    .then(res => res.redirect('http://google.com'))
   }
 
-
-
-  
 
   render() {
     return (
@@ -45,7 +42,7 @@ class Spread extends React.Component {
       <hr></hr>
       {
         this.props.spreadPos3
-        ? <button onClick={() => this.spreadToDatabase()}> SAVE READING </button>
+        ? <Link to={'/feedback/spread'} onClick={() => this.spreadToDatabase()}>SAVE ME</Link>
         : null
       }
       </>
@@ -63,3 +60,6 @@ const mapStateToProps = (state) => {
 }
 
 export default connect(mapStateToProps)(Spread) 
+
+
+// ? <button onClick={() => this.spreadToDatabase()}> SAVE READING </button>

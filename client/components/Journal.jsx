@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 import { addJournal } from '../api'
 
@@ -46,7 +47,7 @@ class Journal extends React.Component {
         <div>
             <textarea name='journal' value={this.state.journal}
               onChange={(e) => this.handleChange(e)}></textarea>
-            <button onClick ={() => this.journalToDatabase(retSpread.spread_id)}>Save Journal</button>
+            <Link to={'/feedback/reflection'} onClick ={() => this.journalToDatabase(retSpread.spread_id)}>Save Journal</Link>
         </div>
       </>
     )
