@@ -16,3 +16,24 @@ export function spreadMaker(spread){
   }
   return spreadObject
 }
+
+export function reverseStyleMaker(current){
+  let style = (current === 'Reverse')
+    ? 'runeImage'
+    : 'runeImage runeReversed'
+  return style
+}
+
+export function reverseButtonText(button){
+  let updatedButton = button
+    ? (button === 'Reverse' ? 'Undo' : 'Reverse')
+    : 'Reverse'
+  return updatedButton
+}
+
+export function updateAspect(current){
+  let updatedAspect = current === 'normal'
+    ? 'reversed'
+    : 'normal'
+  return updatedAspect
+}

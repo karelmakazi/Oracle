@@ -24,8 +24,7 @@ class Spread extends React.Component {
         <Rune pos={'3'} />
         <hr></hr>
         {this.props.spreadPos3 ? (
-          <Link to={'/feedback/spread'} 
-            onClick={() => this.spreadToDatabase()}>
+          <Link to={'/feedback/spread'} onClick={() => this.spreadToDatabase()}>
             SAVE ME
           </Link>
         ) : null}
