@@ -1,5 +1,4 @@
-const config = require('../knexfile').development
-const db = require('knex')(config)
+const connection = require('./connection')
 
 module.exports = {
   getJournalSpread,
@@ -7,7 +6,7 @@ module.exports = {
   addJournal
 }
 
-function getJournalSpread(){
+function getJournalSpread(db=connection){
   return db('spreads')
   .select()
   .orderBy('timestamp', 'desc')
@@ -17,7 +16,7 @@ function getJournalSpread(){
   .catch(err => (console.log(err)))
 }
 
-function addSpread (spread) {
+function addSpread (spread, db=connection) {
   return db('spreads')
   .insert({
     pos1_rune: spread.pos1_rune,
@@ -35,7 +34,7 @@ function addSpread (spread) {
   .catch(err => (console.log(err)))
 }
 
-function addJournal(id, journal){
+function addJournal(id, journal, db=connection){
   return db('spreads')
   .update({journal: journal})
   .where('spread_id', id)
