@@ -3,7 +3,6 @@ import {Link} from 'react-router-dom'
 
 const Feedback = props => {
   const feedbackSource = props.match.params.source
-  console.log('REQPARAMS:', feedbackSource)
 
 
   return (
