@@ -1,27 +1,30 @@
 const express = require('express')
-const db = require('../db/db')
 const router = express.Router()
-
+const db = require('../db/db')
 
 router.get('/', (req, res) => {
   db.getJournalSpread()
-  .then(result => res.json(result))
-  .catch(err => {console.log(err)
-    res.status(500).send('ERROR')})
+    .then((currentSpread) => res.json(currentSpread))
+    .catch((err) => {
+      res.status(500).send('DATABASE ERROR: ' + err.message)
+    })
 })
 
-router.post('/addSpread', (req,res) => {
+router.post('/addSpread', (req, res) => {
   db.addSpread(req.body)
-  // .then(id => res.json(id))
-  .then(res.redirect('/'))
-  .catch(err => {console.log(err)
-    res.status(500).send('ERROR')})
+    .then(() => {res.sendStatus(201)})
+    .catch((err) => {
+      res.status(500).send('DATABASE ERROR: ' + err.message)
+    })
 })
 
-router.post('/addJournal', (req,res) => {
-  db.addJournal(req.body.id, req.body.journal)
-  .catch(err => {console.log(err)
-    res.status(500).send('ERROR')})
+router.post('/addJournal', (req, res) => {
+  const { id, journal } = req.body
+  db.addJournal(id, journal)
+    .then(() => {res.sendStatus(201)})
+    .catch((err) => {
+      res.status(500).send('DATABASE ERROR: ' + err.message)
+    })
 })
 
 module.exports = router
