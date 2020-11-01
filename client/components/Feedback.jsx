@@ -1,13 +1,14 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import { feedbackCompiler } from '../lib'
 
-const Feedback = props => {
+const Feedback = (props) => {
+
   const feedbackSource = props.match.params.source
-
 
   return (
     <div className=''>
-      <h1>Your {feedbackSource} has been saved.</h1>
+      <h1>{feedbackCompiler(feedbackSource)}</h1>
       <Link to={'/'}>HOME</Link>
     </div>
   )

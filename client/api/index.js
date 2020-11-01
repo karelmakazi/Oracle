@@ -3,7 +3,9 @@ import request from 'superagent'
 export function getJournalSpread(){
   return request.get('/v1/spreads')
   .then(res => { return res.body } )
-  .catch( err => console.log(err))
+  .catch((err) => {
+    res.status(500).send('DATABASE ERROR: ' + err.message)
+  })
 }
 
 export function addSpread(spreadObject) {
@@ -16,5 +18,7 @@ export function addSpread(spreadObject) {
 export function addJournal(journalObject){
   return request.post('v1/spreads/addJournal')
   .send(journalObject)
-  .catch(err => console.log(err))
+  .catch((err) => {
+    res.status(500).send('DATABASE ERROR: ' + err.message)
+  })
 }
