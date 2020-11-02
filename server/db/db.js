@@ -9,7 +9,10 @@ module.exports = {
 }
 
 function getJournalSpread(db = connection) {
-  return db('spreads').select().orderBy('timestamp', 'desc').first()
+  return db('spreads')
+    .select()
+    .orderBy('timestamp', 'desc')
+    .first()
 }
 
 function addSpread(spread, db = connection) {
@@ -22,5 +25,7 @@ function addSpread(spread, db = connection) {
 }
 
 function addJournal(id, journal, db = connection) {
-  return db('spreads').update({ journal: journal }).where('spread_id', id)
+  return db('spreads')
+    .update({ journal: journal })
+    .where('spread_id', id)
 }

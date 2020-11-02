@@ -1,3 +1,4 @@
+//Creates database ready spread object
 export function spreadMaker(spread) {
   const spreadPos1 = spread.spreadPos1.runePosition1
   const spreadPos2 = spread.spreadPos2.runePosition2
@@ -17,11 +18,13 @@ export function spreadMaker(spread) {
   return spreadObject
 }
 
+//Handles CSS reversing of symbols
 export function reverseStyleMaker(current) {
   let style = current === 'Reverse' ? 'runeImage' : 'runeImage runeReversed'
   return style
 }
 
+//Handles reversing button display
 export function reverseButtonText(button) {
   let updatedButton = button
     ? button === 'Reverse'
@@ -31,11 +34,13 @@ export function reverseButtonText(button) {
   return updatedButton
 }
 
+//Handles reversed state
 export function updateAspect(current) {
   let updatedAspect = current === 'normal' ? 'reversed' : 'normal'
   return updatedAspect
 }
 
+//Compiles feedback text to user
 export function feedbackCompiler(current) {
   const feebackRange = {
     spread:
@@ -47,4 +52,9 @@ export function feedbackCompiler(current) {
     current == 'spread' ? feebackRange.spread : feebackRange.journal
 
   return feedbackResult
+}
+
+//Removes selected symbol from array
+export function runeFilter(selRune, passedList) {
+  return passedList.runes.filter((rune) => rune.name !== selRune)
 }

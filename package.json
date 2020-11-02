@@ -1,8 +1,8 @@
 {
-  "name": "boilerplate-react-webpack",
+  "name": "rune_log",
   "version": "0.2.2",
   "description": "Decolonising Runes",
-  "repository": "https://github.com/dev-academy-challenges/boilerplate-react-webpack.git",
+  "repository": "https://https://github.com/karelmakazi/runeLog",
   "main": "server/index.js",
   "author": "felixFourie",
   "license": "ISC",
@@ -15,7 +15,7 @@
     "build": "webpack",
     "server": "node server",
     "knex": "knex --knexfile server/db/knexfile.js",
-    "test": "jest --watchAll"
+    "test": "jest --watchAll --verbose"
   },
   "babel": {
     "presets": [

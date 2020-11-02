@@ -1,5 +1,7 @@
 import runeData from '../../server/data/runes'
 
+import { runeFilter } from '../lib'
+
 const initialState = runeData
 
 const runeList = (state = initialState, action) => {
@@ -8,15 +10,9 @@ const runeList = (state = initialState, action) => {
       return {
         runes: runeFilter(action.selRune, action.passedList),
       }
-
     default:
       return state
   }
-}
-
-//PRODUCE FILTERED RUNELIST
-function runeFilter(selRune, passedList) {
-  return passedList.runes.filter((rune) => rune.name !== selRune)
 }
 
 export default runeList
