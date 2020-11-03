@@ -16,7 +16,7 @@ exports.seed = (knex) => {
           pos3_image:'z', 
           journal:'journaled'
         },
-        { pos1_rune: 'Uruz', 
+        { pos1_rune: 'Fehu', 
         pos1_aspect:'normal',
         pos1_image:'f', 
         pos2_rune: 'Berkano', 

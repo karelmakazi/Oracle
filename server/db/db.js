@@ -11,7 +11,7 @@ module.exports = {
 function getJournalSpread(db = connection) {
   return db('spreads')
     .select()
-    .orderBy('timestamp', 'desc')
+    .orderBy('spread_id', 'desc')
     .first()
 }
 
