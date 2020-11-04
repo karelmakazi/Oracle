@@ -28,4 +28,6 @@ function addJournal(id, journal, db = connection) {
   return db('spreads')
     .update({ journal: journal })
     .where('spread_id', id)
+    .then((updated) => {return updated})
 }
+
