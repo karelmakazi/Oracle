@@ -6,6 +6,9 @@ const Feedback = (props) => {
 
   const feedbackSource = props.match.params.source
 
+  console.log('test', test);
+  console.log('source', feedbackSource);
+  
   return (
     <div className=''>
       <h1>{feedbackCompiler(feedbackSource)}</h1>
