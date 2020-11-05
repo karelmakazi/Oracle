@@ -9,7 +9,7 @@ import { spreadMaker } from '../lib'
 
 class Spread extends React.Component {
   spreadToDatabase() {
-    let spreadObject = spreadMaker(this.props)
+    let spreadObject = spreadMaker(this.props.currentSpread)
     addSpread(spreadObject)
   }
 

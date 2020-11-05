@@ -1,8 +1,8 @@
 //Creates database ready spread object
 export function spreadMaker(spread) {
-  const spreadPos1 = spread.spreadPos1.runePosition1
-  const spreadPos2 = spread.spreadPos2.runePosition2
-  const spreadPos3 = spread.spreadPos3.runePosition3
+  const spreadPos1 = spread[0].runePosition1
+  const spreadPos2 = spread[1].runePosition2
+  const spreadPos3 = spread[2].runePosition3
 
   let spreadObject = {
     pos1_rune: spreadPos1.selRuneName,
