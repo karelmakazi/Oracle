@@ -1,4 +1,3 @@
-import { TestScheduler } from 'jest'
 import runeList from './runeList'
 import { runeFilter } from '../lib'
 
@@ -15,23 +14,20 @@ const actionMaker = (option) => {
   return {
     type: actionList[option],
     selRune: 'Fehu',
-    passedList: testList
+    passedList: testList,
   }
-
 }
 
 describe('Test Redux reducer: runeList.', () => {
   test('runeList: calls runeFilter.', () => {
-  
     runeFilter.mockImplementation((testList) => Promise.resolve(testList))
     let testReducer = runeList(testList, actionMaker(0))
     expect(runeFilter).toHaveBeenCalled()
     expect(testReducer).toHaveProperty('runes')
   })
 
-  test('runeList: returns default value.', ()=> {
+  test('runeList: returns default value.', () => {
     let testReducer = runeList(testList, actionMaker(1))
     expect(testReducer).not.toHaveProperty('runes')
-
   })
 })
