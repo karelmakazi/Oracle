@@ -6,7 +6,7 @@ import runePosition from './runePosition'
 
 
 export default combineReducers({
-  navigation,
+  // navigation,
   runeList,
   runePosition
 })
