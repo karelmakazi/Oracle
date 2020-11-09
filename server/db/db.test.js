@@ -31,7 +31,6 @@ describe('Tests all database functions', () => {
 
   test('addSpread: adds a spread to the database.', () => {
     spreadTableMatch.mockImplementation((spread) => Promise.resolve(spread))
-
     db.addSpread(spreadData, testDb).then((id) => {
       expect(spreadTableMatch).toHaveBeenCalled()
       expect(id).toHaveLength(1)

@@ -29,6 +29,7 @@ describe('GET /v1/spreads', () => {
   test('Retrieves a spread object.', () => {
     db.getJournalSpread.mockImplementation(() => Promise.resolve(mockSpread))
 
+    expect.assertions(1)
     return request(server)
       .get('/v1/spreads')
       .expect(200)
@@ -41,7 +42,8 @@ describe('GET /v1/spreads', () => {
     db.getJournalSpread.mockImplementation(() =>
       Promise.reject(new Error('Test Error'))
     )
-
+    
+    expect.assertions(1)
     return request(server)
       .get('/v1/spreads')
       .expect(500)
@@ -55,6 +57,7 @@ describe('POST /v1/spreads/addSpread', () => {
   test('Posts a new spread to the database.', () => {
     db.addSpread.mockImplementation(() => Promise.resolve('1'))
 
+    expect.assertions(1)
     return request(server)
       .post('/v1/spreads/addSpread')
       .expect(201)
@@ -68,6 +71,7 @@ describe('POST /v1/spreads/addSpread', () => {
       Promise.reject(new Error('Test Error'))
     )
 
+    expect.assertions(1)
     return request(server)
       .post('/v1/spreads/addSpread')
       .expect(500)
@@ -81,6 +85,7 @@ describe('POST /v1/spreads/addJournal', () => {
   test('Updates the spread entry with the journal content.', () => {
     db.addJournal.mockImplementation(() => Promise.resolve())
 
+    expect.assertions(1)
     return request(server)
       .post('/v1/spreads/addJournal')
       .expect(201)
@@ -94,6 +99,7 @@ describe('POST /v1/spreads/addJournal', () => {
       Promise.reject(new Error('Test Error'))
     )
 
+    expect.assertions(1)
     return request(server)
       .post('/v1/spreads/addJournal')
       .expect(500)
