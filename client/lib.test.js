@@ -46,4 +46,15 @@ describe('Test all client helper functions', () => {
     expect(nameCheckList.length).toBe(24)
     expect(nameCheckList).toEqual(expect.not.arrayContaining(selectedRune))
   })
+
+  test('runeMeaning: returns correct interpretation.', () => {
+    let testMeaning = lib.runeMeaning('Fehu', 'normal')
+    expect(testMeaning).toMatch('Fehu')
+    expect(testMeaning).not.toContain('reversed')
+  })
+
+  test('runeMeaning: returns correct reversed interpretation.', () => {
+    let testMeaning = lib.runeMeaning('Gebo', 'reversed')
+    expect(testMeaning).toBe("")
+  })
 })
