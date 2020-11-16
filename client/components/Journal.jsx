@@ -1,5 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import { connect } from 'react-redux'
 
 import { addJournal } from '../api'
 
@@ -53,4 +54,11 @@ class Journal extends React.Component {
     )
   }
 }
-export default Journal
+
+const mapStateToProps = (state) => {
+  return {
+    spread: state.currentSpread.spread,
+  }
+}
+
+export default connect(mapStateToProps)(Journal)

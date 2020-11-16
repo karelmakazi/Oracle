@@ -58,3 +58,5 @@ export function feedbackCompiler(current) {
 export function runeFilter(selRune, passedList) {
   return passedList.runes.filter((rune) => rune.name !== selRune)
 }
+
+

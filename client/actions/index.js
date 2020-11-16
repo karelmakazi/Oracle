@@ -12,3 +12,10 @@ export const updateRuneList = (rune, passedList) => {
     passedList: passedList,
   }
 }
+
+export const setCurrentSpread = (spread) => {
+  return {
+    type: 'CURRENT_STATE',
+    spread: spread
+  }
+}

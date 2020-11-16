@@ -18,3 +18,4 @@ export function addJournal(journalObject){
   .send(journalObject)
   .catch((err) => showError(err.message))
 }
+

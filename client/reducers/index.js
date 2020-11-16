@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux'
 
-import navigation from './navigation'
+import currentSpread from './currentSpread'
 import runeList from './runeList'
 import runePosition from './runePosition'
 
 
 export default combineReducers({
-  // navigation,
+  currentSpread,
   runeList,
   runePosition
 })
