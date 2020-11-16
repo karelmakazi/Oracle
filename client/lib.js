@@ -1,3 +1,5 @@
+import runeData from '../server/data/runes'
+
 //Creates database ready spread object
 export function spreadMaker(spread) {
   const spreadPos1 = spread[0].runePosition1
@@ -59,4 +61,9 @@ export function runeFilter(selRune, passedList) {
   return passedList.runes.filter((rune) => rune.name !== selRune)
 }
 
+//Finds and returns interpretation
+export function runeMeaning(runeName, runeAspect){
+  let runeMeaning = runeData.runes.find(rune => rune.name === runeName)
+  return runeMeaning.meaning[runeAspect]
+}
 

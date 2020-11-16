@@ -4,6 +4,8 @@ import { connect } from 'react-redux'
 
 import { addJournal } from '../api'
 
+import { runeMeaning } from '../lib'
+ 
 
 class Journal extends React.Component {
   
@@ -32,25 +34,76 @@ class Journal extends React.Component {
       ? 'runeImage runeReversed' : 'runeImage'
 
     return(
-      <>
-        <h1>Enter Your Journal</h1>
-        <div className ='journalSymbolHolder'>
-          <div className={runeImageStyle(retSpread.pos1_aspect)}>
-            {retSpread.pos1_image}</div>
-          <h3>{retSpread.pos1_rune}</h3>
-          <div className={runeImageStyle(retSpread.pos1_aspect)}>
-            {retSpread.pos2_image}</div>
-            <h3>{retSpread.pos2_rune}</h3>
-          <div className={runeImageStyle(retSpread.pos1_aspect)}>
-           {retSpread.pos3_image}</div>
-           <h3>{retSpread.pos3_rune}</h3>
+      <div className='mainComponentWrapper'>
+        <div className ='symbolDisplayWrapper'>
+          <div className='symbolContainer'>
+            <div className={runeImageStyle(retSpread.pos1_aspect)}>
+              {retSpread.pos1_image}</div>
+            <h3>{retSpread.pos1_rune}</h3>
+          </div>
+          <div className='symbolContainer'>
+            <div className={runeImageStyle(retSpread.pos1_aspect)}>
+              {retSpread.pos2_image}</div>
+              <h3>{retSpread.pos2_rune}</h3>
+          </div>
+          <div className='symbolContainer'> 
+            <div className={runeImageStyle(retSpread.pos1_aspect)}>
+            {retSpread.pos3_image}</div>
+            <h3>{retSpread.pos3_rune}</h3>
+          </div>
         </div>
-        <div>
-            <textarea name='journal' value={this.state.journal}
-              onChange={(e) => this.handleChange(e)}></textarea>
-            <Link to={'/feedback/reflection'} onClick ={() => this.journalToDatabase(retSpread.spread_id)}>Save Journal</Link>
+
+        <div className='panelContainer'>
+          <div className='inputPanel'>
+            <textarea name='journal' 
+              value={this.state.journal}
+              onChange={(e) => this.handleChange(e)}>
+            </textarea>
+            <Link to={'/feedback/reflection'} 
+              onClick ={() => this.journalToDatabase(retSpread.spread_id)}>
+              Save Journal
+            </Link>
+          </div>
+          <div className='infoPanelWrapper'>
+            <div className='infoPanel'>
+              <div className='symbolDisplay'>
+                <div className={runeImageStyle(retSpread.pos3_aspect)}>
+                  {retSpread.pos3_image}
+                </div>
+              </div>
+              <div className='symbolInfo'>
+                <h3>The Overview</h3>
+                <h1>{retSpread.pos3_rune}</h1>
+                <p>{runeMeaning(retSpread.pos3_rune, retSpread.pos3_aspect)}</p>
+              </div>
+            <div className='infoPanel'>
+              <div className='symbolDisplay'>
+                <div className={runeImageStyle(retSpread.pos2_aspect)}>
+                  {retSpread.pos2_image}
+                </div>
+              </div>
+              <div className='symbolInfo'>
+                <h3>The Challenge</h3>
+                <h1>{retSpread.pos2_rune}</h1>
+                <p>{runeMeaning(retSpread.pos2_rune, retSpread.pos2_aspect)}</p>
+              </div>
+            </div>
+            <div className='infoPanel'>
+              <div className='symbolDisplay'>
+                <div className={runeImageStyle(retSpread.pos1_aspect)}>
+                  {retSpread.pos1_image}
+                </div>
+              </div>
+              <div className='symbolInfo'>
+                <h3>The Action</h3>
+                <h1>{retSpread.pos1_rune}</h1>
+                <p>{runeMeaning(retSpread.pos1_rune, retSpread.pos1_aspect)}</p>
+              </div>
+            </div>
+          </div>
         </div>
-      </>
+      </div>
+    </div>
     )
   }
 }

@@ -2,17 +2,13 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
-// import Spread from './Spread'
-// import Journal from './Journal'
-
 import { getJournalSpread } from '../api'
 import { setCurrentSpread } from '../actions'
 
 class Welcome extends React.Component {
-  
   state = {
     spread: null,
-    journal: 'empty'
+    journal: 'empty',
   }
 
   componentDidMount() {
@@ -20,8 +16,7 @@ class Welcome extends React.Component {
   }
 
   fetchLastSpread() {
-    return getJournalSpread()
-    .then((spread) => {
+    return getJournalSpread().then((spread) => {
       this.setState({
         spread: spread,
         journal: spread.journal
@@ -31,24 +26,19 @@ class Welcome extends React.Component {
   }
 
   render() {
-    let spreadObj = this.state.spread
-    let linkDirection = (this.state.journal === 'empty') ? '/journal' : '/spread'
-    let linkText = (this.state.journal === 'empty') ? 'journal' : 'spread'
+    let linkDirection = this.state.journal === 'empty' ? '/journal' : '/spread'
+    let linkText = this.state.journal === 'empty' ? 'journal' : 'spread'
 
-    // console.log('spreadObj', spreadObj);
-    // console.log('state',this.state.journal);
-    // console.log('linkDirection', linkDirection);
-    
     return (
-      <div className="mainComponentWrapper">
-        <div className="greetingContentWrapper">
-          <div className="centeredCallout">
+      <div className='mainComponentWrapper'>
+        <div className='greetingContentWrapper'>
+          <div className='centeredCallout'>
             <h1>Welcome to Oracle</h1>
           </div>
-          <div className="centeredButtonContainer">
-            <Link className="centeredButton" 
-              to={linkDirection}>Enter your {linkText}.
-             </Link>
+          <div className='centeredButtonContainer'>
+            <Link className='centeredButton' to={linkDirection}>
+              Enter your {linkText}.
+            </Link>
           </div>
         </div>
       </div>
@@ -57,9 +47,3 @@ class Welcome extends React.Component {
 }
 
 export default connect()(Welcome)
-
-{/* {spreadObj 
-  ? (spreadObj.journal != 'empty' 
-        ? (<Spread />) 
-        : (<Journal spread={spreadObj} />)) 
-  : null} */}
