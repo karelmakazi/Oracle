@@ -7,7 +7,7 @@ const currentSpread = (state = intialState, action) => {
         spread: action.spread
       }
       default:
-        return intialState
+        return state
   }
 }
 

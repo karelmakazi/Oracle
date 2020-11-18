@@ -8,9 +8,15 @@ const Feedback = (props) => {
 
   
   return (
-    <div className=''>
-      <h1>{feedbackCompiler(feedbackSource)}</h1>
-      <Link to={'/'}>HOME</Link>
+    <div className='mainComponentWrapper'>
+      <div className='greetingContentWrapper'>
+        <div className='centeredFeedback'>
+          <h1>{feedbackCompiler(feedbackSource)}</h1>
+        </div>
+      </div>
+      <div className='centeredButtonContainer'>
+        <Link to={'/'}>Continue</Link>
+      </div>
     </div>
   )
 }

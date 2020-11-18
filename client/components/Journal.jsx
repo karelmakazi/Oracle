@@ -19,7 +19,6 @@ class Journal extends React.Component {
   }
 
   handleClick = () => {
-    console.log('hi');
     this.setState({
       ...this.state,
       input: !this.state.input
@@ -83,7 +82,7 @@ class Journal extends React.Component {
             </div>
           )}
 
-          {!this.state.info && <div className="infoPanelWrapper">
+          {!this.state.input && <div className="infoPanelWrapper">
             <div className="infoPanel">
               <div className="symbolDisplay">
                 <div className={runeImageStyle(retSpread.pos3_aspect)}>
@@ -131,12 +130,11 @@ class Journal extends React.Component {
           <button onClick={this.handleClick}>
             {displayMode(this.state.input)}
           </button>
-          <button>
           <Link
               to={'/feedback/reflection'}
-              onClick={() => this.journalToDatabase(retSpread.spread_id)}/>
-              Save Reflection 
-          </button>
+              onClick={() => this.journalToDatabase(retSpread.spread_id)}>
+            <button>Save Reflection </button>
+          </Link>
         </div>
       </div>
     )

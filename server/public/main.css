@@ -17,6 +17,25 @@
   transform: rotate(180deg);
 }
 
+.selectableRuneWrapper{
+  display:flex;
+  flex-wrap: wrap;
+  width: 100px;
+  margin-left: 20px;
+  height:200px;
+}
+
+.selectableRune{
+  font-family: 'futhark';
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.symbolSelectWrapper{
+  display: flex;
+  width: 50px;
+}
+
 /* Color Theme Swatches in Hex */
 /* .Maine-Beach-•-Riverland-Orange-1-hex { color: #F2B705; }
 .Maine-Beach-•-Riverland-Orange-2-hex { color: #F29F05; }

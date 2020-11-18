@@ -33,27 +33,32 @@ class Rune extends React.Component {
     const runePos = this.props.pos
 
     return (
-      <div className=''>
-        {!this.state.selRuneId
-          ? runeList.runes.map((rune, key) => {
-            return (
-              <button className=''
-                key={key}
-                onClick={() => this.onSelect(rune)}>
-                {rune.name}
-              </button>
-            )
-          })
-          : <RuneDetail 
-            rune={this.state} 
-            clear={this.clearSelection}
-            pos={runePos}
-            />
-        }
-      </div>
+      <div className='selectPanelWrapper'>
 
-    )
-  }
+        {!this.state.selRuneId && 
+          <div className='selectableRuneWrapper'>
+            {runeList.runes.map((rune, key) => {
+                return (
+                  <div className='selectableRune'
+                    key={key}
+                    onClick={() => this.onSelect(rune)}>
+                    {rune.image}
+                  </div>
+                )}
+                )}
+          </div>}
+
+        {this.state.selRuneId && 
+          <div className='seletedRuneDetail'>
+            <RuneDetail 
+              rune={this.state} 
+              clear={this.clearSelection}
+              pos={runePos}
+              />
+          </div>}
+        
+        </div>
+)}
 }
 
 const mapStateToProps = (state) => {
@@ -63,3 +68,31 @@ const mapStateToProps = (state) => {
 }
 
 export default connect(mapStateToProps)(Rune)
+
+{/* <button className=''
+key={key}
+onClick={() => this.onSelect(rune)}>
+{rune.name}
+</button> */}
+
+
+{/* {!this.state.selRuneId
+  ? runeList.runes.map((rune, key) => {
+    return (
+      <div className=''>
+      <div className='selectableRune'
+        key={key}
+        onClick={() => this.onSelect(rune)}>
+        {rune.image}
+      </div>
+      </div>
+
+
+    )
+  })
+  : <RuneDetail 
+    rune={this.state} 
+    clear={this.clearSelection}
+    pos={runePos}
+    />
+} */}

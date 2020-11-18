@@ -18,6 +18,6 @@ describe('Test Redux reducer: currentSpread.', () => {
 
   test('currentSpread: returns default state', ()=> {
     let testReducer = currentSpread(actionList, actionMaker(1))
-    expect(testReducer.spread).toBe(null)
+    expect(testReducer.spread).toBe(undefined)
   })
 })
