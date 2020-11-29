@@ -1,0 +1,182 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@200;300;600&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+}
+
+@media screen and (min-width: 500px) {
+  html {
+    font-size: calc(16px + 64 * ((100vw - 500px) / 700));
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  html {
+    font-size: 80px;
+  }
+}
+
+body {
+  background: #255950;
+  min-width: 500px;
+  min-height: 800px;
+}
+
+.mainAppWrapper {
+  height: 100vh;
+}
+
+.greetingContentWrapper {
+  height: 20vh;
+  margin-top: 53vh;
+  margin-bottom: 60vh;
+  padding-top: 2.5vh;
+}
+
+.centeredCallout {
+  text-align: center;
+  height: 15vh;
+  width: 60vw;
+  width: min-content;
+  margin: 0 auto;
+  padding-bottom: 2vh;
+}
+
+.centeredCallout h1 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #FEFAF3;
+  white-space: nowrap;
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+}
+
+.centeredCallout h1 {
+  font-size: 40px;
+}
+
+@media screen and (min-width: 500px) {
+  .centeredCallout h1 {
+    font-size: calc(40px + 50 * ((100vw - 500px) / 700));
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .centeredCallout h1 {
+    font-size: 90px;
+  }
+}
+
+.centeredButtonContainer {
+  height: 2vh;
+  margin-top: 3vh;
+  text-align: center;
+  cursor: pointer;
+}
+
+.mainComponentWrapper {
+  height: 100vh;
+  font-size: 16px;
+}
+
+.symbolSelectWrapper {
+  height: 54vh;
+}
+
+.panelContainer {
+  height: 36vh;
+  background-color: #FEFAF3;
+}
+
+.infoPanelWrapper {
+  height: 100vh;
+  padding: 2vh 0;
+  display: flex;
+}
+
+.infoPanelWrapper .selectPanel {
+  width: 30vw;
+  height: 32vh;
+  margin-left: 2vw;
+  padding-top: 8vh;
+  text-align: center;
+  border-left: 2px solid #255950;
+}
+
+.infoPanelWrapper .selectPanel h1 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #255950;
+  white-space: nowrap;
+}
+
+.infoPanelWrapper .selectPanel h1 {
+  font-size: 25px;
+}
+
+@media screen and (min-width: 500px) {
+  .infoPanelWrapper .selectPanel h1 {
+    font-size: calc(25px + 25 * ((100vw - 500px) / 700));
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .infoPanelWrapper .selectPanel h1 {
+    font-size: 50px;
+  }
+}
+
+.infoPanelWrapper .selectPanel h3 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 200;
+  text-transform: uppercase;
+  color: #255950;
+  white-space: nowrap;
+}
+
+.infoPanelWrapper .selectPanel h3 {
+  font-size: 16px;
+}
+
+@media screen and (min-width: 500px) {
+  .infoPanelWrapper .selectPanel h3 {
+    font-size: calc(16px + 14 * ((100vw - 500px) / 700));
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .infoPanelWrapper .selectPanel h3 {
+    font-size: 30px;
+  }
+}
+
+.centeredButton {
+  font-family: 'Barlow Condensed';
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #FEFAF3;
+  text-decoration: none;
+}
+
+.centeredButton {
+  font-size: 20px;
+}
+
+@media screen and (min-width: 500px) {
+  .centeredButton {
+    font-size: calc(20px + 30 * ((100vw - 500px) / 700));
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .centeredButton {
+    font-size: 50px;
+  }
+}

@@ -1,0 +1,131 @@
+@import './reset/reset';
+@import './utilities/variables.scss';
+@import './reset/typography';
+@import './layout/layout';
+
+
+body {
+  background: $primary_colour;
+  min-width: 500px;
+  min-height: 800px;
+  }
+
+//LAYOUT
+  .mainAppWrapper {
+    height: 100vh
+  }
+
+.greetingContentWrapper {
+  // background-color: brown;
+  height: 20vh;
+  margin-top: 53vh;
+  margin-bottom: 60vh;
+  padding-top: 2.5vh;
+
+}
+
+.centeredCallout {
+  text-align: center;
+  height: 15vh;
+  width: 60vw;
+  width: min-content;
+  margin: 0 auto;
+  padding-bottom: 2vh;
+  
+//MIXIN?
+  h1 {
+    @include fluid-type($min_width, $max_width, 40px, 90px);
+
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: $secondary_colour;
+
+    white-space: nowrap;
+    
+
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+  }
+}
+
+.centeredButtonContainer {
+  height: 2vh;
+  margin-top: 3vh;
+  text-align: center;
+  cursor: pointer;
+}
+
+.mainComponentWrapper {
+  height: 100vh;
+  //temp
+  font-size: 16px;
+}
+
+.symbolSelectWrapper {
+  height: 54vh;
+}
+
+.panelContainer {
+  height: 36vh;
+  background-color: $secondary_colour;
+}
+
+.infoPanelWrapper{
+  height: 100vh;
+  padding: 2vh 0;
+  display: flex;
+  
+
+  .selectPanel {
+    width: 30vw;
+    height: 32vh;
+    margin-left: 2vw;
+    padding-top: 8vh;
+    text-align: center;
+    border-left: 2px solid $primary_colour;
+
+    h1{
+      @include fluid-type($min_width, $max_width, 25px, 50px);
+
+      //duplication make mixin
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: $primary_colour;
+
+      white-space: nowrap;
+    }
+
+    h3 {
+      @include fluid-type($min_width, $max_width, 16px, 30px);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 200;
+      text-transform: uppercase;
+      color: $primary_colour;
+
+      white-space: nowrap;
+    }
+  }
+
+
+
+}
+
+
+
+
+
+
+//BUTTON
+.centeredButton {
+  @include fluid-type($min_width, $max_width, 20px, 50px);
+  font-family: 'Barlow Condensed';
+  font-weight: 600;
+  text-transform: uppercase;
+  color: $secondary_colour;
+  text-decoration: none;
+}
+
+
+//TYPE

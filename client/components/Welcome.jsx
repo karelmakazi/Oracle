@@ -30,18 +30,18 @@ class Welcome extends React.Component {
     let linkText = this.state.journal === 'empty' ? 'journal' : 'spread'
 
     return (
-      <div className='mainComponentWrapper'>
+      <>
         <div className='greetingContentWrapper'>
           <div className='centeredCallout'>
             <h1>Welcome to Oracle</h1>
           </div>
           <div className='centeredButtonContainer'>
             <Link className='centeredButton' to={linkDirection}>
-              Enter your {linkText}.
+              Enter your {linkText}
             </Link>
           </div>
         </div>
-      </div>
+      </>
     )
   }
 }
