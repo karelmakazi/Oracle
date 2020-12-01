@@ -55,30 +55,25 @@ class Spread extends React.Component {
           
             <div className='symbolSelectContainer'>
              {!this.state.draw3Active &&
-             <button onClick={() => this.drawNumber(3)}>
-              Draw the Third</button>}
+             <button className={'drawButton'} onClick={() => this.drawNumber(3)}>
+              Select</button>}
              {this.state.draw3Active && 
               <Rune pos={'3'} />}
-              <hr></hr>
             </div>
 
           
             <div className='symbolSelectContainer'>
             {!this.state.draw2Active &&
-             <button onClick={() => this.drawNumber(2)}>
-              Draw the Second</button>}
+             <button className={'drawButton'} onClick={() => this.drawNumber(2)}>
+              Select</button>}
 
             {this.state.draw2Active && 
               <Rune pos={'2'} />}
-
-            <hr></hr>
           </div>
 
           
             <div className='symbolSelectContainer'>
-            first
             <Rune pos={'1'} />
-            <hr></hr>
           </div>
 
         </div>

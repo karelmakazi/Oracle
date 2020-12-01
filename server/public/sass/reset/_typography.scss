@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@200;300;600&display=swap');
 
+@font-face {
+  font-family: 'Futhark';
+  src: url('../assets/futhark.ttf');
+  format: 'truetype'
+}
+
 $min_width: 500px;
 $max_width: 1200px;
 $min_font: 16px;

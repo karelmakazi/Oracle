@@ -42,11 +42,11 @@ class RuneDetail extends React.Component {
     return (
       <>
         <div className={runeImageStyle}>{rune.selRuneImage}</div>
-        <h3>{rune.selRuneName}</h3>
+        {/* <h3>{rune.selRuneName}</h3> */}
         {!this.state.runeCommited ? (
           <>
             {rune.selRuneReverse ? (
-              <button
+              <button className={'runeImageButton'}
                 onClick={() => {
                   this.aspectSwap(buttonText, currentAspect)
                 }}

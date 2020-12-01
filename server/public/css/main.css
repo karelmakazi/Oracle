@@ -5,6 +5,12 @@
   padding: 0;
 }
 
+@font-face {
+  font-family: 'Futhark';
+  src: url("../assets/futhark.ttf");
+  format: 'truetype';
+}
+
 html {
   font-size: 16px;
 }
@@ -87,6 +93,129 @@ body {
 
 .symbolSelectWrapper {
   height: 54vh;
+  width: 100%;
+  padding: 2vh 0;
+  display: flex;
+}
+
+.symbolSelectWrapper .symbolSelectContainer {
+  width: 30vw;
+  height: 50vh;
+  margin-left: 2vw;
+  text-align: center;
+}
+
+.symbolSelectWrapper .symbolSelectContainer .drawButton {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #FEFAF3;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 10vw;
+  position: relative;
+  top: 40vh;
+}
+
+.symbolSelectWrapper .symbolSelectContainer .drawButton {
+  font-size: 20px;
+}
+
+@media screen and (min-width: 500px) {
+  .symbolSelectWrapper .symbolSelectContainer .drawButton {
+    font-size: calc(20px + 10 * ((100vw - 500px) / 700));
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .symbolSelectWrapper .symbolSelectContainer .drawButton {
+    font-size: 30px;
+  }
+}
+
+.selectableRuneWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  height: 50vh;
+  padding: 2vh 4vw;
+}
+
+.selectableRuneWrapper .selectableRune {
+  font-family: 'Futhark';
+  color: #FEFAF3;
+  width: 20%;
+  height: 12%;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.selectableRuneWrapper .selectableRune {
+  font-size: 40px;
+}
+
+@media screen and (min-width: 500px) {
+  .selectableRuneWrapper .selectableRune {
+    font-size: calc(40px + 10 * ((100vw - 500px) / 700));
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .selectableRuneWrapper .selectableRune {
+    font-size: 50px;
+  }
+}
+
+.runeImage {
+  font-family: 'Futhark';
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #FEFAF3;
+  padding-top: 5vh;
+}
+
+.runeImage {
+  font-size: 100px;
+}
+
+@media screen and (min-width: 500px) {
+  .runeImage {
+    font-size: calc(100px + 150 * ((100vw - 500px) / 700));
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .runeImage {
+    font-size: 250px;
+  }
+}
+
+.runeImageButton {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.runeImageButton {
+  font-size: 25px;
+}
+
+@media screen and (min-width: 500px) {
+  .runeImageButton {
+    font-size: calc(25px + 25 * ((100vw - 500px) / 700));
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .runeImageButton {
+    font-size: 50px;
+  }
+}
+
+.runeReversed {
+  transform: rotate(180deg);
 }
 
 .panelContainer {

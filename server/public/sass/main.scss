@@ -12,11 +12,10 @@ body {
 
 //LAYOUT
   .mainAppWrapper {
-    height: 100vh
+    height: 100vh;
   }
 
 .greetingContentWrapper {
-  // background-color: brown;
   height: 20vh;
   margin-top: 53vh;
   margin-bottom: 60vh;
@@ -35,15 +34,11 @@ body {
 //MIXIN?
   h1 {
     @include fluid-type($min_width, $max_width, 40px, 90px);
-
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 600;
     text-transform: uppercase;
     color: $secondary_colour;
-
     white-space: nowrap;
-    
-
     border-top: 2px solid white;
     border-bottom: 2px solid white;
   }
@@ -58,13 +53,81 @@ body {
 
 .mainComponentWrapper {
   height: 100vh;
-  //temp
   font-size: 16px;
 }
 
 .symbolSelectWrapper {
   height: 54vh;
+  width: 100%;
+  padding: 2vh 0;
+  display: flex;
+
+  .symbolSelectContainer {
+    width: 30vw;
+    height: 50vh;
+    margin-left: 2vw;
+    text-align: center;
+
+    .drawButton {
+      @include fluid-type($min_width, $max_width, 20px, 30px);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 400;
+      text-transform: uppercase;
+      color: $secondary_colour;
+      background: none;
+      border: none;
+      cursor: pointer;
+      width:10vw;
+      position: relative;
+      top:40vh;
+    }
+  }
 }
+
+//RUNE COMPONENT
+.selectableRuneWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  height: 50vh;
+  padding: 2vh 4vw;
+
+  .selectableRune {
+    @include fluid-type($min_width, $max_width, 40px, 50px);
+    font-family: 'Futhark';
+    color: $secondary_colour;
+    width: 20%;
+    height: 12%;
+    margin-left: 5px;
+    cursor: pointer;
+  }
+}
+
+//RUNE COMPONENT UPPER RUNE DISPLAY
+.runeImage {
+  @include fluid-type($min_width, $max_width, 100px, 250px);
+  font-family: 'Futhark';
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: $secondary_colour;
+  padding-top: 5vh;
+
+  
+}
+
+.runeImageButton {
+  @include fluid-type($min_width, $max_width, 25px, 50px);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.runeReversed {
+  transform: rotate(180deg);
+}
+
+
 
 .panelContainer {
   height: 36vh;
@@ -85,10 +148,9 @@ body {
     text-align: center;
     border-left: 2px solid $primary_colour;
 
+    //FARM OUT TO MIXIN AND OR FUNCTION
     h1{
       @include fluid-type($min_width, $max_width, 25px, 50px);
-
-      //duplication make mixin
       font-family: 'Barlow Condensed', sans-serif;
       font-weight: 600;
       text-transform: uppercase;
@@ -107,10 +169,11 @@ body {
       white-space: nowrap;
     }
   }
-
-
-
 }
+
+
+
+
 
 
 
