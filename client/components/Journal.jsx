@@ -39,24 +39,26 @@ class Journal extends React.Component {
     const runeImageStyle = (name) =>
       name === 'reversed' ? 'runeImage runeReversed' : 'runeImage'
     const displayMode = (input) => 
-      !input ? 'Enter Reflection' : 'View Interpretations'
+      !input ? 'Enter Journal' : 'View Interpretations'
 
     return (
       <div className="mainComponentWrapper">
-        <div className="symbolDisplayWrapper">
-          <div className="symbolContainer">
+
+        <div className="symbolSelectWrapper">
+        
+          <div className="symbolSelectContainer">
             <div className={runeImageStyle(retSpread.pos1_aspect)}>
               {retSpread.pos1_image}
             </div>
             <h3>{retSpread.pos1_rune}</h3>
           </div>
-          <div className="symbolContainer">
+          <div className="symbolSelectContainer">
             <div className={runeImageStyle(retSpread.pos1_aspect)}>
               {retSpread.pos2_image}
             </div>
             <h3>{retSpread.pos2_rune}</h3>
           </div>
-          <div className="symbolContainer">
+          <div className="symbolSelectContainer">
             <div className={runeImageStyle(retSpread.pos1_aspect)}>
               {retSpread.pos3_image}
             </div>
@@ -67,47 +69,48 @@ class Journal extends React.Component {
         <div className="panelContainer">
           {this.state.input && (
             <div className="inputPanel">
+            <h1>ENTER JOURNAL</h1>
               <textarea
+                rows='11'
+                // cols='100'
                 name="journal"
                 value={this.state.journal}
                 onChange={(e) => this.handleChange(e)}
               ></textarea>
-              {/* <Link onClick={() => this.handleClick}>
-                flip
-              </Link>
-              <Link
-                to={'/feedback/reflection'}
-                onClick={() => this.journalToDatabase(retSpread.spread_id)}
-              > Save Journal</Link> */}
+           
             </div>
           )}
 
           {!this.state.input && <div className="infoPanelWrapper">
+
             <div className="infoPanel">
-              <div className="symbolDisplay">
-                <div className={runeImageStyle(retSpread.pos3_aspect)}>
-                  {retSpread.pos3_image}
-                </div>
-              </div>
-              <div className="symbolInfo">
-                <h3>The Overview</h3>
-                <h1>{retSpread.pos3_rune}</h1>
-                <p>{runeMeaning(retSpread.pos3_rune, retSpread.pos3_aspect)}</p>
-              </div>
-              <div className="infoPanel">
                 <div className="symbolDisplay">
-                  <div className={runeImageStyle(retSpread.pos2_aspect)}>
-                    {retSpread.pos2_image}
+                  <div className={runeImageStyle(retSpread.pos3_aspect)}>
+                    {retSpread.pos3_image}
                   </div>
                 </div>
                 <div className="symbolInfo">
-                  <h3>The Challenge</h3>
-                  <h1>{retSpread.pos2_rune}</h1>
-                  <p>
-                    {runeMeaning(retSpread.pos2_rune, retSpread.pos2_aspect)}
-                  </p>
+                  <h3>The Overview</h3>
+                  <h1>{retSpread.pos3_rune}</h1>
+                  <p>{runeMeaning(retSpread.pos3_rune, retSpread.pos3_aspect)}</p>
                 </div>
               </div>
+
+            <div className="infoPanel">
+              <div className="symbolDisplay">
+                <div className={runeImageStyle(retSpread.pos2_aspect)}>
+                  {retSpread.pos2_image}
+                </div>
+              </div>
+              <div className="symbolInfo">
+                <h3>The Challenge</h3>
+                <h1>{retSpread.pos2_rune}</h1>
+                <p>
+                  {runeMeaning(retSpread.pos2_rune, retSpread.pos2_aspect)}
+                </p>
+              </div>
+            </div>
+              
               <div className="infoPanel">
                 <div className="symbolDisplay">
                   <div className={runeImageStyle(retSpread.pos1_aspect)}>
@@ -122,18 +125,21 @@ class Journal extends React.Component {
                   </p>
                 </div>
               </div>
-            </div>
+            {/* </div> */}
           </div>}
 
         </div>
-        <div className='buttonWrapper'>
-          <button onClick={this.handleClick}>
+        <div className='centeredButtonContainer'>
+          <div
+            className='centeredButton'
+            onClick={this.handleClick}>
             {displayMode(this.state.input)}
-          </button>
+          </div>
           <Link
+            className='centeredButton multiButton' 
               to={'/feedback/reflection'}
               onClick={() => this.journalToDatabase(retSpread.spread_id)}>
-            <button>Save Reflection </button>
+            Save Journal 
           </Link>
         </div>
       </div>

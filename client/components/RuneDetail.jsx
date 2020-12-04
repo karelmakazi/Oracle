@@ -54,8 +54,8 @@ class RuneDetail extends React.Component {
                 {this.state.revButtonText}
               </button>
             ) : null}
-            <button onClick={() => this.props.clear()}>Clear</button>
-            <button onClick={() => this.submitRune(this.props)}>Commit</button>
+            <button className={'runeImageButton'}onClick={() => this.props.clear()}>Clear</button>
+            <button className={'runeImageButton'}onClick={() => this.submitRune(this.props)}>Commit</button>
           </>
         ) : null}
       </>

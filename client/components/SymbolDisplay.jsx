@@ -9,7 +9,7 @@ const drawName = [ 'The Overview', 'The Challenge', 'The Action' ]
 const SymbolDisplay = (props) => {
 
   let symbolData = props.symbolData
-  let drawNumber = props.drawNumber
+  let drawNumber = props.drawNumber - 1
 
   return(
     <div className='infoPanel'>

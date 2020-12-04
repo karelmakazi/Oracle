@@ -6,19 +6,38 @@ const Feedback = (props) => {
 
   const feedbackSource = props.match.params.source
 
-  
-  return (
-    <div className='mainComponentWrapper'>
-      <div className='greetingContentWrapper'>
-        <div className='centeredFeedback'>
-          <h1>{feedbackCompiler(feedbackSource)}</h1>
+ return (
+      <>
+        <div className='greetingContentWrapper'>
+          <div className='centeredCallout'>
+            <h1>{feedbackCompiler(feedbackSource)}</h1>
+          </div>
+          <div className='centeredButtonContainer'>
+            <Link className='centeredButton' to={'/'}>
+              Continue
+            </Link>
+          </div>
         </div>
-      </div>
-      <div className='centeredButtonContainer'>
-        <Link to={'/'}>Continue</Link>
-      </div>
-    </div>
-  )
+      </>
+    )
+  
 }
 
 export default Feedback
+ 
+ 
+ 
+ 
+  // return (
+    
+  //   <>
+  //     <div className='greetingContentWrapper'>
+  //       <div className='centeredCallout'>
+  //         <h1>{feedbackCompiler(feedbackSource)}</h1>
+  //       </div>
+  //     </div>
+  //     <div className='centeredButtonContainer'>
+  //       <Link className='' to={'/'}>Continue</Link>
+  //     </div>
+  //  </>
+  // )

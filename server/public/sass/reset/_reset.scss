@@ -1,5 +1,32 @@
+@import '../utilities/variables.scss';
+
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
+
+button {
+  outline: none;
+  background: none;
+}
+
+/* The emerging W3C standard
+   that is currently Firefox-only */
+   * {
+    scrollbar-width: thin;
+    scrollbar-color: $primary_colour $secondary_colour;
+  }
+  
+  /* Works on Chrome/Edge/Safari */
+  *::-webkit-scrollbar {
+    width: 10px;
+  }
+  *::-webkit-scrollbar-track {
+    background: $secondary_colour;
+  }
+  *::-webkit-scrollbar-thumb {
+    background-color: $scroll_colour;
+    border-radius: 20px;
+     }

@@ -156,11 +156,12 @@ class Spread extends React.Component {
 
         </div>
 
-        <div className='buttonWrapper'>
+        <div className='centeredButtonContainer'>
           {this.props.spreadPos3 && (
-            <Link to={'/feedback/spread'} 
+            <Link className='centeredButton'
+              to={'/feedback/spread'} 
                onClick={() => this.spreadToDatabase()}>
-               <button>Save your Spread </button>
+               Save your Spread 
             </Link>
           )}
         </div>

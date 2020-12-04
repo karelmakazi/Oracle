@@ -3,24 +3,23 @@
 @import './reset/typography';
 @import './layout/layout';
 
-
 body {
   background: $primary_colour;
   min-width: 500px;
   min-height: 800px;
-  }
+  overflow: hidden;
+}
 
 //LAYOUT
-  .mainAppWrapper {
-    height: 100vh;
-  }
+.mainAppWrapper {
+  height: 100vh;
+}
 
 .greetingContentWrapper {
   height: 20vh;
   margin-top: 53vh;
   margin-bottom: 60vh;
   padding-top: 2.5vh;
-
 }
 
 .centeredCallout {
@@ -30,8 +29,8 @@ body {
   width: min-content;
   margin: 0 auto;
   padding-bottom: 2vh;
-  
-//MIXIN?
+
+  //MIXIN?
   h1 {
     @include fluid-type($min_width, $max_width, 40px, 90px);
     font-family: 'Barlow Condensed', sans-serif;
@@ -46,9 +45,11 @@ body {
 
 .centeredButtonContainer {
   height: 2vh;
-  margin-top: 3vh;
+  display: flex;
   text-align: center;
   cursor: pointer;
+  align-items: center;
+  justify-content: center;
 }
 
 .mainComponentWrapper {
@@ -68,6 +69,14 @@ body {
     margin-left: 2vw;
     text-align: center;
 
+    h3{
+      @include fluid-type($min_width, $max_width, 20px, 30px);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: $secondary_colour;
+    }
+
     .drawButton {
       @include fluid-type($min_width, $max_width, 20px, 30px);
       font-family: 'Barlow Condensed', sans-serif;
@@ -77,9 +86,9 @@ body {
       background: none;
       border: none;
       cursor: pointer;
-      width:10vw;
+      width: 10vw;
       position: relative;
-      top:40vh;
+      top: 40vh;
     }
   }
 }
@@ -90,7 +99,7 @@ body {
   flex-wrap: wrap;
   text-align: center;
   height: 50vh;
-  padding: 2vh 4vw;
+  padding: 5vh 3vw 2vh 4vw;
 
   .selectableRune {
     @include fluid-type($min_width, $max_width, 40px, 50px);
@@ -99,63 +108,65 @@ body {
     width: 20%;
     height: 12%;
     margin-left: 5px;
+    margin-bottom: 15px;
     cursor: pointer;
   }
 }
 
 //RUNE COMPONENT UPPER RUNE DISPLAY
 .runeImage {
-  @include fluid-type($min_width, $max_width, 100px, 250px);
+  @include fluid-type($min_width, $max_width, 150px, 300px);
   font-family: 'Futhark';
   display: flex;
   flex-direction: column;
   align-items: center;
   color: $secondary_colour;
-  padding-top: 5vh;
-
-  
+  padding-top: 30%;
 }
 
 .runeImageButton {
-  @include fluid-type($min_width, $max_width, 25px, 50px);
+  @include fluid-type($min_width, $max_width, 16px, 20px);
   font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 600;
+  font-weight: 300;
   text-transform: uppercase;
+  color: $secondary_colour;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin: 20px 5px;
 }
 
 .runeReversed {
   transform: rotate(180deg);
+  padding-top: 0;
+  padding-bottom: 30%;
 }
-
-
 
 .panelContainer {
   height: 36vh;
+  margin-bottom: 2vh;
   background-color: $secondary_colour;
 }
 
-.infoPanelWrapper{
+.infoPanelWrapper {
   height: 100vh;
   padding: 2vh 0;
   display: flex;
-  
 
   .selectPanel {
     width: 30vw;
     height: 32vh;
     margin-left: 2vw;
-    padding-top: 8vh;
+    padding-top: 10vh;
     text-align: center;
-    border-left: 2px solid $primary_colour;
 
     //FARM OUT TO MIXIN AND OR FUNCTION
-    h1{
+    h1 {
       @include fluid-type($min_width, $max_width, 25px, 50px);
       font-family: 'Barlow Condensed', sans-serif;
       font-weight: 600;
       text-transform: uppercase;
       color: $primary_colour;
-
       white-space: nowrap;
     }
 
@@ -172,14 +183,50 @@ body {
 }
 
 
+.infoPanel {
+  display: flex;
+  width: 30vw;
+  height: 32vh;
+  margin-left: 2vw;
+ 
+    .symbolDisplay {
+    height: 100%;
+    width: 3vw;
+    padding: 10px 10px 20px 0;
+    }
 
+    .symbolInfo {
+      overflow: auto;
+      width: 27vw;
+      padding: 0 1vw;
+      font-family: 'Barlow Condensed', sans-serif;
+      color: $primary_colour;
+      border-left: 2px solid $primary_colour;
 
+      h1 {
+        @include fluid-type($min_width, $max_width, 40px, 55px);
+        text-transform: uppercase;
+        padding-bottom: 2vh;
+      }
 
+      h3 {
+        font-weight: 300;
+        text-transform: uppercase;
+      }
 
+      p{
+        @include fluid-type($min_width, $max_width, 15px, 20px);
+      }
+    }
 
+    .runeImage {
+      @include fluid-type($min_width, $max_width, 50px, 80px);
+      color: $primary_colour;
+      padding: 0 
+    }
+}
 
-
-
+//REFACTOR TO COMPONENTS FILE 
 //BUTTON
 .centeredButton {
   @include fluid-type($min_width, $max_width, 20px, 50px);
@@ -188,7 +235,38 @@ body {
   text-transform: uppercase;
   color: $secondary_colour;
   text-decoration: none;
+  outline: none;
 }
 
+.multiButton {
+  margin-left: 50px;
+}
 
-//TYPE
+//INPUT 
+
+.inputPanel {
+  @include fluid-type($min_width, $max_width, 16px, 20px);
+  text-transform: uppercase;
+  font-family: 'Barlow Condensed', sans-serif;
+  color: $primary_colour;
+  padding: 1vh 2vw;
+
+  h1{
+    padding-bottom: 2px;
+    padding-left: 5px;
+  }
+}
+
+textarea{
+  @include fluid-type($min_width, $max_width, 15px, 20px);
+  font-family: 'Barlow Condensed'; 
+  font-weight: 300;
+  color: $primary_colour;
+  resize: none;
+  border: 2px solid $primary_colour;
+  border-radius: 10px;
+  width: 96vw;
+  padding: 1% 1%;
+  background-color: $secondary_colour;
+  outline: none;
+}

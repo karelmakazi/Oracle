@@ -46,9 +46,9 @@ export function updateAspect(current) {
 export function feedbackCompiler(current) {
   const feebackRange = {
     spread:
-      'Your spread has been saved. Remember to add your daily reflection at the end of the day.',
+      'Your spread has been saved',
     journal:
-      'Your journal entry has been saved. Add another daily spread tomorrow.',
+      'Your journal entry has been saved',
   }
   const feedbackResult =
     current == 'spread' ? feebackRange.spread : feebackRange.journal
