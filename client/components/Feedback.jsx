@@ -25,19 +25,3 @@ const Feedback = (props) => {
 
 export default Feedback
  
- 
- 
- 
-  // return (
-    
-  //   <>
-  //     <div className='greetingContentWrapper'>
-  //       <div className='centeredCallout'>
-  //         <h1>{feedbackCompiler(feedbackSource)}</h1>
-  //       </div>
-  //     </div>
-  //     <div className='centeredButtonContainer'>
-  //       <Link className='' to={'/'}>Continue</Link>
-  //     </div>
-  //  </>
-  // )
