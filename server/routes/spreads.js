@@ -27,4 +27,15 @@ router.post('/addJournal', (req, res) => {
     })
 })
 
+router.delete('/', (req, res) => {
+  const { id } = req.body
+  db.clearSpread(id)
+  .then(() => res.sendStatus(200))
+  .catch(err => {
+    res.status(500).send('DATABASE ERROR: ' 
+    + err.message)
+  })
+})
+
+
 module.exports = router

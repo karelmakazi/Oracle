@@ -43,4 +43,12 @@ describe('Tests all database functions', () => {
       expect(updated).toBe(1)
     })
   })
+
+  test('clearSpread: removes a spread from database.', () => {
+    let deleteId = 2
+    db.clearSpread(deleteId)
+    .then((response) => {
+      expect(response).toBe(200)
+    })
+  })
 })

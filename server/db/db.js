@@ -6,6 +6,7 @@ module.exports = {
   getJournalSpread,
   addSpread,
   addJournal,
+  clearSpread
 }
 
 function getJournalSpread(db = connection) {
@@ -31,3 +32,8 @@ function addJournal(id, journal, db = connection) {
     .then((updated) => {return updated})
 }
 
+function clearSpread(id, db = connection) {
+  return db ('spreads')
+    .delete()
+    .where('spread_id', id)
+}

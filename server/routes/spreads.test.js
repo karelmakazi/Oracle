@@ -7,6 +7,7 @@ jest.mock('../db/db', () => {
     getJournalSpread: jest.fn(),
     addSpread: jest.fn(),
     addJournal: jest.fn(),
+    clearSpread: jest.fn(),
   }
 })
 
@@ -102,6 +103,32 @@ describe('POST /v1/spreads/addJournal', () => {
     expect.assertions(1)
     return request(server)
       .post('/v1/spreads/addJournal')
+      .expect(500)
+      .then((res) => {
+        expect(res.text).toMatch('DATABASE ERROR: Test Error')
+      })
+  })
+})
+
+describe('DELETE /v1/spreads', ()=> {
+  test('Returns 200 on success.', () => {
+    db.clearSpread.mockImplementation(() => Promise.resolve(200))
+    expect.assertions(1)
+    return request(server)
+      .delete('/v1/spreads')
+      .expect(200)
+      .then((res) => {
+        expect(res.text).toMatch('OK')
+      })
+  })
+
+    test('Responds with an error code on failure.', () => {
+    db.clearSpread.mockImplementation(() =>
+      Promise.reject(new Error('Test Error'))
+    )
+    expect.assertions(1)
+    return request(server)
+      .delete('/v1/spreads')
       .expect(500)
       .then((res) => {
         expect(res.text).toMatch('DATABASE ERROR: Test Error')
