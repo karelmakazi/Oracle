@@ -1,6 +1,8 @@
 # RUNE LOG
 
-This is app is intended to help new rune users learn the practice with a simple spread recording function coupled with a daily reflection journal. To use, simply fork and run npm install. Spreads are retained in an SQLite3 database.
+This is app is intended to help new rune users learn the practice with a simple spread recording function coupled with a daily reflection journal. To use, simply fork and run npm install. Spreads are retained in an SQLite3 database. 
+
+Source: The Book of Runes. Ralph H. Blum. 1993
 
 # BEWARE
 
