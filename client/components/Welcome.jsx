@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
-import { getJournalSpread } from '../api'
+import { getJournalSpread, clearSpread } from '../api'
 import { setCurrentSpread } from '../actions'
 
 class Welcome extends React.Component {
@@ -15,6 +15,7 @@ class Welcome extends React.Component {
     this.fetchLastSpread()
   }
 
+
   fetchLastSpread() {
     return getJournalSpread().then((spread) => {
       this.setState({
@@ -23,6 +24,13 @@ class Welcome extends React.Component {
       })
       this.props.dispatch(setCurrentSpread(this.state.spread))
     })
+  }
+
+  handleClick(id){
+    clearSpread(id)
+    .then(
+      this.fetchLastSpread()
+    )
   }
 
   render() {
@@ -39,6 +47,13 @@ class Welcome extends React.Component {
             <Link className='centeredButton' to={linkDirection}>
               Enter your {linkText}
             </Link>
+            { this.state.journal === 'empty' &&
+            <div
+              className='centeredButton'
+              onClick={() => this.handleClick(this.state.spread.spread_id)}>
+              Clear Spread 
+            </div>
+            }
           </div>
         </div>
       </>

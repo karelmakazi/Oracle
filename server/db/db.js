@@ -33,6 +33,7 @@ function addJournal(id, journal, db = connection) {
 }
 
 function clearSpread(id, db = connection) {
+  console.log('here');
   return db ('spreads')
     .delete()
     .where('spread_id', id)

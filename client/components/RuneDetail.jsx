@@ -46,7 +46,8 @@ class RuneDetail extends React.Component {
         {!this.state.runeCommited ? (
           <>
             {rune.selRuneReverse ? (
-              <button className={'runeImageButton'}
+              <button
+                className={'runeImageButton'}
                 onClick={() => {
                   this.aspectSwap(buttonText, currentAspect)
                 }}
@@ -54,8 +55,18 @@ class RuneDetail extends React.Component {
                 {this.state.revButtonText}
               </button>
             ) : null}
-            <button className={'runeImageButton'}onClick={() => this.props.clear()}>Clear</button>
-            <button className={'runeImageButton'}onClick={() => this.submitRune(this.props)}>Commit</button>
+            <button
+              className={'runeImageButton'}
+              onClick={() => this.props.clear()}
+            >
+              Clear
+            </button>
+            <button
+              className={'runeImageButton'}
+              onClick={() => this.submitRune(this.props)}
+            >
+              Commit
+            </button>
           </>
         ) : null}
       </>

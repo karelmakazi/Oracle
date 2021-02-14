@@ -10,8 +10,8 @@ const App = () => {
   return (
     <div className="mainAppWrapper">
       <Route exact path="/" component={Welcome} />
-      <Route path='/spread' component={Spread} />
-      <Route path = '/journal' component={Journal} />
+      <Route path="/spread" component={Spread} />
+      <Route path="/journal" component={Journal} />
       <Route exact path="/feedback/:source" component={Feedback} />
     </div>
   )
