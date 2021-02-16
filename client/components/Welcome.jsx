@@ -15,22 +15,18 @@ class Welcome extends React.Component {
     this.fetchLastSpread()
   }
 
-
   fetchLastSpread() {
     return getJournalSpread().then((spread) => {
       this.setState({
         spread: spread,
-        journal: spread.journal
+        journal: spread.journal,
       })
       this.props.dispatch(setCurrentSpread(this.state.spread))
     })
   }
 
-  handleClick(id){
-    clearSpread(id)
-    .then(
-      this.fetchLastSpread()
-    )
+  handleClick(id) {
+    clearSpread(id).then(this.fetchLastSpread())
   }
 
   render() {
@@ -39,21 +35,29 @@ class Welcome extends React.Component {
 
     return (
       <>
-        <div className='greetingContentWrapper'>
-          <div className='centeredCallout'>
-            <h1>Welcome to Oracle</h1>
+        <div className="text-center text-white uppercase">
+          <div className="">
+            <h1 className="font-semibold  text-5xl md:text-7xl lg:text-9xl border-b-2 md:border-b-4">
+              Welcome to Oracle
+            </h1>
           </div>
-          <div className='centeredButtonContainer'>
-            <Link className='centeredButton' to={linkDirection}>
+
+          <div className="flex m-5 md:m-7 lg:m-10">
+            <Link
+              className="text-xl md:text-2xl lg:text-4xl"
+              to={linkDirection}
+            >
               Enter your {linkText}
             </Link>
-            { this.state.journal === 'empty' &&
-            <div
-              className='centeredButton'
-              onClick={() => this.handleClick(this.state.spread.spread_id)}>
-              Clear Spread 
-            </div>
-            }
+
+            {this.state.journal === 'empty' && (
+              <div
+                className="text-xl md:text-2xl lg:text-4xl"
+                onClick={() => this.handleClick(this.state.spread.spread_id)}
+              >
+                Clear Spread
+              </div>
+            )}
           </div>
         </div>
       </>

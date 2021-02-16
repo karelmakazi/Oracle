@@ -1,7 +1,7 @@
 {
   "name": "rune_log",
-  "version": "0.2.2",
-  "description": "Decolonising Runes",
+  "version": "0.3.0",
+  "description": "Rune logging tool",
   "repository": "https://https://github.com/karelmakazi/runeLog",
   "main": "server/index.js",
   "author": "felixFourie",
@@ -15,7 +15,8 @@
     "build": "webpack",
     "server": "node server",
     "knex": "knex --knexfile server/db/knexfile.js",
-    "test": "jest --watchAll --verbose"
+    "test": "jest --watchAll --verbose",
+    "build-css":"tailwindcss build src/styles.css -o server/public/css/styles.css"
   },
   "babel": {
     "presets": [
@@ -33,8 +34,11 @@
     ]
   },
   "dependencies": {
+    "autoprefixer": "^10.2.4",
     "express": "^4.17.1",
-    "react-router-dom": "^5.2.0"
+    "postcss": "^8.2.6",
+    "react-router-dom": "^5.2.0",
+    "tailwindcss": "^2.0.3"
   },
   "devDependencies": {
     "@babel/core": "^7.10.2",
