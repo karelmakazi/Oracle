@@ -9,7 +9,7 @@ class Welcome extends React.Component {
   state = {
     spread: null,
     journal: 'empty',
-    temp: '1',
+    styleSwitch: 'on',
   }
 
   componentDidMount() {
@@ -37,11 +37,9 @@ class Welcome extends React.Component {
     return (
       <>
         <div className="text-center text-white uppercase">
-          <div className="">
-            <h1 className="font-semibold  text-5xl md:text-7xl lg:text-9xl border-b-2 md:border-b-4">
-              Welcome to Oracle
-            </h1>
-          </div>
+          <h1 className="font-semibold  text-5xl md:text-7xl lg:text-9xl border-b-2 md:border-b-4">
+            Welcome to Oracle
+          </h1>
 
           <div className="flex justify-center space-x-5 md:space-x-10 lg:space-x-20 m-5 md:m-7 lg:m-10 ">
             <Link
@@ -51,7 +49,8 @@ class Welcome extends React.Component {
               Enter your {linkText}
             </Link>
 
-            {this.state.temp === '1' && (
+            {/* Logic check journal:empty when not styling */}
+            {this.state.styleSwitch === 'on' && (
               <Link
                 className="text-xl md:text-2xl lg:text-4xl cursor-pointer hover:text-green-300"
                 onClick={() => this.handleClick(this.state.spread.spread_id)}
