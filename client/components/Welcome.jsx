@@ -9,6 +9,7 @@ class Welcome extends React.Component {
   state = {
     spread: null,
     journal: 'empty',
+    temp: '1',
   }
 
   componentDidMount() {
@@ -42,21 +43,21 @@ class Welcome extends React.Component {
             </h1>
           </div>
 
-          <div className="flex m-5 md:m-7 lg:m-10">
+          <div className="flex justify-center space-x-5 md:space-x-10 lg:space-x-20 m-5 md:m-7 lg:m-10 ">
             <Link
-              className="text-xl md:text-2xl lg:text-4xl"
+              className="text-xl md:text-2xl lg:text-4xl cursor-pointer hover:text-green-300"
               to={linkDirection}
             >
               Enter your {linkText}
             </Link>
 
-            {this.state.journal === 'empty' && (
-              <div
-                className="text-xl md:text-2xl lg:text-4xl"
+            {this.state.temp === '1' && (
+              <Link
+                className="text-xl md:text-2xl lg:text-4xl cursor-pointer hover:text-green-300"
                 onClick={() => this.handleClick(this.state.spread.spread_id)}
               >
                 Clear Spread
-              </div>
+              </Link>
             )}
           </div>
         </div>
