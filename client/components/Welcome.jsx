@@ -1,19 +1,19 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
+import React from "react";
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
-import { getJournalSpread, clearSpread } from '../api'
-import { setCurrentSpread } from '../actions'
+import { getJournalSpread, clearSpread } from "../api";
+import { setCurrentSpread } from "../actions";
 
 class Welcome extends React.Component {
   state = {
     spread: null,
-    journal: 'empty',
-    styleSwitch: 'on',
-  }
+    journal: "empty",
+    styleSwitch: "on",
+  };
 
   componentDidMount() {
-    this.fetchLastSpread()
+    this.fetchLastSpread();
   }
 
   fetchLastSpread() {
@@ -21,18 +21,18 @@ class Welcome extends React.Component {
       this.setState({
         spread: spread,
         journal: spread.journal,
-      })
-      this.props.dispatch(setCurrentSpread(this.state.spread))
-    })
+      });
+      this.props.dispatch(setCurrentSpread(this.state.spread));
+    });
   }
 
   handleClick(id) {
-    clearSpread(id).then(this.fetchLastSpread())
+    clearSpread(id).then(this.fetchLastSpread());
   }
 
   render() {
-    let linkDirection = this.state.journal === 'empty' ? '/journal' : '/spread'
-    let linkText = this.state.journal === 'empty' ? 'journal' : 'spread'
+    let linkDirection = this.state.journal === "empty" ? "/journal" : "/spread";
+    let linkText = this.state.journal === "empty" ? "journal" : "spread";
 
     return (
       <>
@@ -50,7 +50,7 @@ class Welcome extends React.Component {
             </Link>
 
             {/* Logic check journal:empty when not styling */}
-            {this.state.styleSwitch === 'on' && (
+            {this.state.styleSwitch === "on" && (
               <Link
                 className="text-xl md:text-2xl lg:text-4xl cursor-pointer hover:text-green-300"
                 onClick={() => this.handleClick(this.state.spread.spread_id)}
@@ -61,8 +61,8 @@ class Welcome extends React.Component {
           </div>
         </div>
       </>
-    )
+    );
   }
 }
 
-export default connect()(Welcome)
+export default connect()(Welcome);

@@ -36,7 +36,7 @@ class Rune extends React.Component {
       <div className='selectPanelWrapper'>
 
         {!this.state.selRuneId && 
-          <div className='selectableRuneWrapper'>
+          <div className='flex'>
             {runeList.runes.map((rune, key) => {
                 return (
                   <div className='selectableRune'

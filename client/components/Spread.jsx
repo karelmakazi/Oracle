@@ -43,12 +43,12 @@ class Spread extends React.Component {
       : ''
 
     return (
-      <div className="mainComponentWrapper">
+      <div className="bg-blue-500 w-screen">
 
 
-        <div className="bg-red-600">
+        <div className="flex bg-red-600">
 
-          <div className="symbolSelectContainer">
+          <div className="flex">
             {!this.state.draw3Active && (
               <button
                 className="text-xl md:text-2xl lg:text-4xl cursor-pointer hover:text-green-300"
@@ -60,7 +60,7 @@ class Spread extends React.Component {
             {this.state.draw3Active && <Rune pos={'3'} />}
           </div>
 
-          <div className="symbolSelectContainer">
+          <div className="flex">
             {!this.state.draw2Active && (
               <button
                 className="text-xl md:text-2xl lg:text-4xl cursor-pointer hover:text-green-300"
@@ -73,7 +73,7 @@ class Spread extends React.Component {
             {this.state.draw2Active && <Rune pos={'2'} />}
           </div>
 
-          <div className="symbolSelectContainer">
+          <div className="flex">
             <Rune pos={'1'} />
           </div>
         </div>
