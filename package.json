@@ -16,7 +16,7 @@
     "server": "node server",
     "knex": "knex --knexfile server/db/knexfile.js",
     "test": "jest --watchAll --verbose",
-    "build-css":"tailwindcss build src/styles.css -o server/public/css/styles.css"
+    "tailbuild": "tailwindcss build src/styles.css -o server/public/css/styles.css"
   },
   "babel": {
     "presets": [

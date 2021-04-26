@@ -6,6 +6,12 @@ module.exports = {
       fontFamily: {
         custom: ['Barlow Condensed'],
       },
+      width: {
+        cardW: '350px',
+      },
+      height: {
+        cardH: '550px',
+      },
     },
   },
   variants: {
