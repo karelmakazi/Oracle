@@ -8,9 +8,17 @@ module.exports = {
       },
       width: {
         cardW: '350px',
+        cardInnerW: '329px',
       },
       height: {
-        cardH: '550px',
+        cardH: '518px',
+        cardInnerH: '497px',
+      },
+      colors: {
+        blueMid: '#326280',
+        redLight: '#FFDFC8',
+        redMid: '#EBACA2',
+        redDark: '#CE6A6B',
       },
     },
   },

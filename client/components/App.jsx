@@ -8,7 +8,7 @@ import Journal from './Journal'
 
 const App = () => {
   return (
-    <div className="flex h-screen justify-center items-center bg-green-700 font-custom">
+    <div className="flex h-screen justify-center items-center bg-blueMid font-custom">
       <Route path="/" component={Spread} />
       {/* <Route exact path="/" component={Welcome} />
       <Route path="/spread" component={Spread} />

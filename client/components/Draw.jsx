@@ -1,9 +1,18 @@
 import React, { useState } from 'react'
 import runeData from '../../server/data/runes'
 
+// LAYOUT STYLING
+const cardFirstPanel =
+  'flex flex-col h-cardInnerH w-cardInnerW rounded-lg bg-redMid border-4 border-redDark text-center justify-center'
+const cardSecondPanel =
+  'flex flex-col h-cardInnerH w-cardInnerW rounded-lg border-4 border-redDark text-center justify-center'
 
-// STYLING 
 
+
+// TYPOGRAPHY STYLING
+const cardH1 = 'pb-10 font-semibold text-5xl text-redDark'
+const cardH3 = 'pt-10 font-semibold text-2xl text-redDark'
+const selectButton = 'font-semibold text-2xl text-redDark hover:text-redLight'
 
 function Draw() {
   const [status, setStatus] = useState(0)
@@ -47,10 +56,11 @@ function Draw() {
     <>
       {/* // Status: 0 - NO SELECTION DISPLAY SHOWN */}
       {status === 0 && (
-        <div>
-          <h3>RUNE ONE</h3>
-          <h1>THE OVERVIEW</h1>
-          <button onClick={() => adjustStatus('up')}>
+        <div className={cardFirstPanel}>
+          <h3 className={cardH3}>RUNE ONE</h3>
+          <h1 className={cardH1}>THE OVERVIEW</h1>
+          <button onClick={() => adjustStatus('up')}
+            className={selectButton}>
             SELECT
           </button>
         </div>
@@ -58,16 +68,21 @@ function Draw() {
 
       {/* Status: 1 - SELECTION DISPLAY SHOWN */}
       {status === 1 && (
-        <div>
-          <h3>SELECT YOUR RUNE</h3>
-          {runeData.runes.map((rune) => {
-            return (
-              <button onClick={() =>
-                selectHandler(rune.id, rune.image, rune.reversible)}>
-                {rune.image}
-              </button>
-            )
-          })}
+        <div className={cardSecondPanel}>
+          <h3 className={cardH1}>SELECT YOUR RUNE</h3>
+          <div>
+            {runeData.runes.map((rune, key) => {
+              return (
+                <button
+                  key={key}
+                  onClick={() =>
+                    selectHandler(rune.id, rune.image, rune.reversible)
+                  }>
+                  {rune.image}
+                </button>
+              )
+            })} 
+          </div>
         </div>
       )}
 
@@ -76,16 +91,12 @@ function Draw() {
         <div>
           <h1>{selected.image}</h1>
           {selected.reversible && (
-            <button onClick={orientationHandler}>
-              CHANGE ASPECT
-            </button>
+            <button onClick={orientationHandler}>CHANGE ASPECT</button>
           )}
           <button onClick={() => lockHandler(selected.rune, aspect)}>
             LOCK IN RUNE
           </button>
-          <button onClick={() => adjustStatus('down')}>
-            CLEAR
-          </button>
+          <button onClick={() => adjustStatus('down')}>CLEAR</button>
         </div>
       )}
     </>

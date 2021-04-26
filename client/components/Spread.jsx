@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 import Draw from './Draw'
 
-const cardPanel = 'h-cardH w-cardW rounded-lg bg-white shadow-xl'
+const cardPanel = 'h-cardH w-cardW p-2.5 rounded-lg bg-white shadow-xl'
 
 function Spread() {
   const [draw1, setDraw1] = useState({ runeID: '', orientation: '' })
