@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
 import runeData from '../../server/data/runes'
+import PanelInactive from './PanelInactive'
 
 // LAYOUT STYLING
-const cardFirstPanel =
-  'flex flex-col h-cardInnerH w-cardInnerW rounded-lg bg-redMid border-4 border-redDark text-center justify-center'
 const cardSecondPanel =
   'flex flex-col h-cardInnerH w-cardInnerW rounded-lg border-4 border-redDark text-center justify-center'
 
@@ -56,14 +55,7 @@ function Draw() {
     <>
       {/* // Status: 0 - NO SELECTION DISPLAY SHOWN */}
       {status === 0 && (
-        <div className={cardFirstPanel}>
-          <h3 className={cardH3}>RUNE ONE</h3>
-          <h1 className={cardH1}>THE OVERVIEW</h1>
-          <button onClick={() => adjustStatus('up')}
-            className={selectButton}>
-            SELECT
-          </button>
-        </div>
+       <PanelInactive adjustStatus={adjustStatus}/>
       )}
 
       {/* Status: 1 - SELECTION DISPLAY SHOWN */}
