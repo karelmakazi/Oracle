@@ -1,12 +1,13 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import runeData from '../../server/data/runes'
+import PanelConfirm from './PanelConfirm'
 import PanelInactive from './PanelInactive'
+import PanelSelect from './PanelSelect'
+import PanelLocked from './PanelLocked'
 
 // LAYOUT STYLING
 const cardSecondPanel =
   'flex flex-col h-cardInnerH w-cardInnerW rounded-lg border-4 border-redDark text-center justify-center'
-
-
 
 // TYPOGRAPHY STYLING
 const cardH1 = 'pb-10 font-semibold text-5xl text-redDark'
@@ -15,13 +16,14 @@ const selectButton = 'font-semibold text-2xl text-redDark hover:text-redLight'
 
 function Draw() {
   const [status, setStatus] = useState(0)
+  const [aspect, setAspect] = useState(false)
+  const [draw, setDraw] = useState({ runeID: '', runeReversed: '' })
   const [selected, setSelected] = useState({
     rune: null,
     image: null,
     reversible: null,
+    meaning: null
   })
-  const [aspect, setAspect] = useState(false)
-  const [draw, setDraw] = useState({ runeID: '', runeOrientation: '' })
 
   function orientationHandler() {
     setAspect(!aspect)
@@ -38,58 +40,52 @@ function Draw() {
     }
   }
 
-  function selectHandler(rune, image, reversible) {
-    setSelected({ rune, image, reversible })
+  function selectHandler(rune, image, reversible, meaning) {
+    setSelected({ rune, image, reversible, meaning })
     adjustStatus('up')
   }
 
   function lockHandler(rune, orientation) {
     setDraw({
       runeID: rune,
-      runeOrientation: orientation,
+      runeReversed: orientation,
     })
     adjustStatus('up')
+  }
+
+  function runeMeaning() {
+    const meaning = runeData.runes.filter((rune) => {
+      return rune.id === selected.rune
+    })
+    console.log(meaning);
   }
 
   return (
     <>
       {/* // Status: 0 - NO SELECTION DISPLAY SHOWN */}
-      {status === 0 && (
-       <PanelInactive adjustStatus={adjustStatus}/>
-      )}
+      {status === 0 && <PanelInactive adjustStatus={adjustStatus} />}
 
       {/* Status: 1 - SELECTION DISPLAY SHOWN */}
       {status === 1 && (
-        <div className={cardSecondPanel}>
-          <h3 className={cardH1}>SELECT YOUR RUNE</h3>
-          <div>
-            {runeData.runes.map((rune, key) => {
-              return (
-                <button
-                  key={key}
-                  onClick={() =>
-                    selectHandler(rune.id, rune.image, rune.reversible)
-                  }>
-                  {rune.image}
-                </button>
-              )
-            })} 
-          </div>
-        </div>
+        <PanelSelect runeData={runeData} selectHandler={selectHandler} />
       )}
 
       {/* Status: 2 - ORIENTATION & LOCKSCREEN SHOWN */}
       {status === 2 && (
-        <div>
-          <h1>{selected.image}</h1>
-          {selected.reversible && (
-            <button onClick={orientationHandler}>CHANGE ASPECT</button>
-          )}
-          <button onClick={() => lockHandler(selected.rune, aspect)}>
-            LOCK IN RUNE
-          </button>
-          <button onClick={() => adjustStatus('down')}>CLEAR</button>
-        </div>
+        <PanelConfirm
+          selected={selected}
+          orientationHandler={orientationHandler}
+          lockHandler={lockHandler}
+          adjustStatus={adjustStatus}
+        />
+      )}
+
+      {/* Status: 3 - MEANING DISPLAYED */}
+      {status === 3 && (
+        <PanelLocked 
+          selected={selected}
+          orientation={draw.runeReversed}
+        />
       )}
     </>
   )
