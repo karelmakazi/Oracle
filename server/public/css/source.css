@@ -2,4 +2,14 @@
 
 @tailwind base;
 @tailwind components;
+
+@font-face {
+  font-family: 'Futhark';
+  src: url('/Futhark.ttf');
+}
+
+.rune-font {
+  font-family: 'Futhark'
+}
+
 @tailwind utilities;

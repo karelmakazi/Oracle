@@ -2,6 +2,10 @@ const express = require('express')
 const router = express.Router()
 const db = require('../db/db')
 
+
+//TEST 
+router.post('/test', )
+
 router.get('/', (req, res) => {
   db.getJournalSpread()
     .then((currentSpread) => res.json(currentSpread))

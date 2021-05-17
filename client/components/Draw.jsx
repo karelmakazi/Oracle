@@ -5,6 +5,7 @@ import PanelInactive from './PanelInactive'
 import PanelSelect from './PanelSelect'
 import PanelLocked from './PanelLocked'
 
+
 // LAYOUT STYLING
 const cardSecondPanel =
   'flex flex-col h-cardInnerH w-cardInnerW rounded-lg border-4 border-redDark text-center justify-center'
@@ -16,8 +17,10 @@ const selectButton = 'font-semibold text-2xl text-redDark hover:text-redLight'
 
 function Draw() {
   const [status, setStatus] = useState(0)
-  const [aspect, setAspect] = useState(false)
-  const [draw, setDraw] = useState({ runeID: '', runeReversed: '' })
+  const [draw, setDraw] = useState({ 
+    runeID: null, 
+    runeReversed: null 
+  })
   const [selected, setSelected] = useState({
     rune: null,
     image: null,
@@ -25,9 +28,10 @@ function Draw() {
     meaning: null
   })
 
-  function orientationHandler() {
-    setAspect(!aspect)
-  }
+ useEffect(()=> {
+   draw.runeID &&
+   console.log('Hi there')
+  }, [draw])
 
   function adjustStatus(direction) {
     switch (direction) {
@@ -53,28 +57,26 @@ function Draw() {
     adjustStatus('up')
   }
 
-  function runeMeaning() {
-    const meaning = runeData.runes.filter((rune) => {
-      return rune.id === selected.rune
-    })
-    console.log(meaning);
-  }
 
   return (
     <>
       {/* // Status: 0 - NO SELECTION DISPLAY SHOWN */}
-      {status === 0 && <PanelInactive adjustStatus={adjustStatus} />}
+      {status === 0 && ( 
+        <PanelInactive 
+          adjustStatus={adjustStatus} />
+      )}
 
       {/* Status: 1 - SELECTION DISPLAY SHOWN */}
       {status === 1 && (
-        <PanelSelect runeData={runeData} selectHandler={selectHandler} />
+        <PanelSelect  
+          runeData={runeData} 
+          selectHandler={selectHandler} />
       )}
 
       {/* Status: 2 - ORIENTATION & LOCKSCREEN SHOWN */}
       {status === 2 && (
         <PanelConfirm
           selected={selected}
-          orientationHandler={orientationHandler}
           lockHandler={lockHandler}
           adjustStatus={adjustStatus}
         />
