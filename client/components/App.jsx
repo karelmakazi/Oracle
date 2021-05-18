@@ -6,7 +6,6 @@ import Feedback from './Feedback'
 import Spread from './Spread'
 import Journal from './Journal'
 
-import Test from './Test'
 
 const App = () => {
   return (
