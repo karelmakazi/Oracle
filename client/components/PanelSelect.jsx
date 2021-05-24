@@ -4,19 +4,33 @@ import VectorFrame from './VectorFrame'
 
 const whitePanel =
   "flex flex-col h-cardInnerH w-cardInnerW rounded-lg border-4 border-redDark text-center justify-center"
-const selectH1 = "pb-10 font-semibold text-3xl text-redDark"
-const selectH3 = "pt-10 font-semibold text-2xl text-redDark"
-const svgStyle = 'fill-current text-redDark hover:text-redMid w-14 h-14'
+const runePanel = "px-6 flex flex-row flex-wrap gap-2 justify-center"
+const selectH1 = "pb-5 font-semibold text-4xl text-redDark"
+const svgStyle = 'fill-current text-redMid hover:text-redDark'
 
 
 function PanelSelect({ runeData, selectHandler }) {
   return (
     <div className={whitePanel}>
-      <h3 className={selectH1}>SELECT YOUR RUNE</h3>
-      <div>
+      <h1 className={selectH1}>SELECT YOUR RUNE</h1>
+      <div className={runePanel}>
         {runeData.runes.map((rune, key) => {
           return (
-            <button
+           <div className={'w-14 h-14'} key={rune.id} 
+              onClick={() => selectHandler( rune.id, rune.name, rune.image, rune.reversible, rune.meaning) }>
+              <VectorFrame svg={rune.image} svgStyle={svgStyle}/>
+          </div>
+          )
+        })}
+      </div>  
+    </div>
+  )
+}
+
+export default PanelSelect
+
+
+{/* <button
               key={key}
               className={'rune-font  text-redDark'}
               onClick={() =>
@@ -27,15 +41,4 @@ function PanelSelect({ runeData, selectHandler }) {
                   rune.meaning
                 )
               }
-            >
-            <VectorFrame key={rune.id} svg={rune.image} svgStyle={svgStyle}/>
-            
-            </button>
-          )
-        })}
-      </div>
-    </div>
-  )
-}
-
-export default PanelSelect
+            > */}

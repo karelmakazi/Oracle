@@ -23,6 +23,7 @@ function Draw() {
   })
   const [selected, setSelected] = useState({
     rune: null,
+    name: null,
     image: null,
     reversible: null,
     meaning: null
@@ -44,8 +45,8 @@ function Draw() {
     }
   }
 
-  function selectHandler(rune, image, reversible, meaning) {
-    setSelected({ rune, image, reversible, meaning })
+  function selectHandler(rune, name, image, reversible, meaning) {
+    setSelected({ rune, name, image, reversible, meaning })
     adjustStatus('up')
   }
 
