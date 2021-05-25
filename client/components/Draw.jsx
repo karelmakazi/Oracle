@@ -31,7 +31,7 @@ function Draw() {
 
  useEffect(()=> {
    draw.runeID &&
-   console.log('Hi there')
+   console.log('hehehe')
   }, [draw])
 
   function adjustStatus(direction) {

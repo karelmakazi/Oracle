@@ -11,9 +11,17 @@ function Spread() {
   const [draw3, setDraw3] = useState({ runeID: '', orientation: '' })
 
   return (
+    <>
     <div className={cardPanel}>
       <Draw />
     </div>
+    <div className={cardPanel}>
+      <Draw />
+    </div>
+    <div className={cardPanel}>
+      <Draw />
+    </div>
+    </>
   )
 }
 
