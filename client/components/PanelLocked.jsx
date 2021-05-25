@@ -11,7 +11,7 @@ const svgStyle = 'fill-current text-redDark'
 
 function PanelLocked ({selected, orientation}) {
   const aspect = orientation ? 'reversed' : 'normal'
-  const rotation = (orientation === '0') ? '180' : '0'
+  const rotation = orientation? '180' : '0'
 
   return(
     <div className={selectPanel}>

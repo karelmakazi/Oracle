@@ -7,15 +7,19 @@ const redPanel =
   "flex flex-col h-cardInnerH w-cardInnerW rounded-lg bg-redMid border-4 border-redDark text-center justify-center"
 
 // TYPOGRAPHY
-const inactiveH1 = "pb-10 font-semibold text-5xl text-redDark"
-const inactiveH3 = "pt-10 font-semibold text-2xl text-redDark"
+const inactiveH1 = "pb-10 font-semibold text-5xl text-redDark uppercase"
+const inactiveH3 = "pt-10 font-semibold text-2xl text-redDark uppercase"
 const selectButton = "font-semibold text-2xl text-redDark hover:text-redLight focus:outline-none"
 
-function PanelInactive({ adjustStatus }) {
+//SEQUENCE
+const drawTitle = ['First', 'Second', 'Third']
+const drawTheme = ['Overview', 'Challenge', 'Action']
+
+function PanelInactive({ adjustStatus, drawNum }) {
   return (
     <div className={redPanel}>
-      <h3 className={inactiveH3}>RUNE ONE</h3>
-      <h1 className={inactiveH1}>THE OVERVIEW</h1>
+      <h3 className={inactiveH3}>{`THE ${drawTitle[drawNum]} RUNE`}</h3>
+      <h1 className={inactiveH1}>{`THE ${drawTheme[drawNum]}`}</h1>
       <button onClick={() => adjustStatus("up")} className={selectButton}>
         SELECT
       </button>
