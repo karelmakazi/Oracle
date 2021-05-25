@@ -13,15 +13,15 @@ function Spread() {
 
   return (
     <div className={drawsPanel}>
-    <div className={cardPanel}>
-      <Draw drawNum={0} updateDraw={setDraw1} />
-    </div>
-    <div className={cardPanel}>
-      <Draw drawNum={1} updateDraw={setDraw2}/>
-    </div>
-    <div className={cardPanel}>
-      <Draw drawNum={2} updateDraw={setDraw3}/>
-    </div>
+      <div className={cardPanel}>
+        <Draw drawNum={0} updateDraw={setDraw1} />
+      </div>
+      <div className={cardPanel}>
+        <Draw drawNum={1} updateDraw={setDraw2}/>
+      </div>
+      <div className={cardPanel}>
+        <Draw drawNum={2} updateDraw={setDraw3}/>
+      </div>
     </div>
   )
 }

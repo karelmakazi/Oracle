@@ -54,6 +54,10 @@ function Draw({ drawNum, updateDraw }) {
       runeID: rune,
       runeReversed: orientation,
     })
+    updateDraw({ 
+      runeID: rune, 
+      orientation: orientation 
+    })
     adjustStatus("up")
   }
 
