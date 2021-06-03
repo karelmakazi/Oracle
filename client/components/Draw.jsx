@@ -50,14 +50,13 @@ function Draw({ drawNum, updateDraw }) {
   }
 
   function lockHandler(rune, orientation) {
-    setDraw({
+    const drawDetail = {
       runeID: rune,
       runeReversed: orientation,
-    })
-    updateDraw({ 
-      runeID: rune, 
-      orientation: orientation 
-    })
+    }
+
+    setDraw(drawDetail)
+    updateDraw(drawDetail)
     adjustStatus("up")
   }
 

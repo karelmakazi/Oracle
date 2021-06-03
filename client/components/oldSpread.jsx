@@ -1,4 +1,5 @@
-import React from 'react'
+
+'import React from 'react'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 
@@ -43,12 +44,12 @@ class oldSpread extends React.Component {
       : ''
 
     return (
-      <div className="bg-blue-500 w-screen">
+      <div className="w-screen bg-blue-500">
         <div className="flex bg-red-600">
           <div className="flex">
             {!this.state.draw3Active && (
               <button
-                className="text-xl md:text-2xl lg:text-4xl cursor-pointer hover:text-green-300"
+                className="text-xl cursor-pointer md:text-2xl lg:text-4xl hover:text-green-300"
                 onClick={() => this.drawNumber(3)}
               >
                 Select
@@ -60,7 +61,7 @@ class oldSpread extends React.Component {
           <div className="flex">
             {!this.state.draw2Active && (
               <button
-                className="text-xl md:text-2xl lg:text-4xl cursor-pointer hover:text-green-300"
+                className="text-xl cursor-pointer md:text-2xl lg:text-4xl hover:text-green-300"
                 onClick={() => this.drawNumber(2)}
               >
                 Select

@@ -224,16 +224,6 @@ export default {
         reversed: "The warning is that you take pains not to be mechanical or unaware. This is not a time to be bound by old conditioning, old authority. Ask yourself what feels right for you and act according to the Light you possess now in your life. Because you may be called upon to undertake a radical departure from old ways, total honesty is required. Otherwise, through negligence or refusal to see clearly, you may cause pain to others, damage to yourself. Not rigidity but flow is the proper attitude at this time. And yet you must wait for the universe to act. Drawing this Rime remember: we do without doing, and everything gets done."
       },
       reversible: true,
-    },
-    // {
-    //   id: 25,
-    //   name: 'Blank',
-    //   image: '',
-    //   meaning: {
-    //     normal: "Blank is the end, blank the beginning. This is the Rune of total trust and should be taken as exciting evidence of your most immediate contact with your own true destiny which, time and again, rises like the phoenix from the ashes of what we call fate. Odin can portend a death. But that death is usually symbolic, and may relate to any part of your life as you are living it now. Relinquishing control is the ultimate challenge for the Spiritual Warrior. Here the Unknowable informs you that it is in motion in your life. In that blankness is held undiluted potential. At the same time pregnant and empty, it comprehends the totality of being, all that is to be actualized. Drawing the Blank Rune brings to the surface our deepest fears: Will I fail? Will I be abandoned? Will it all be taken away? And yet, within that blankness is held our highest good, our truest possibilities and all our fertile dreams. Willingness and permitting are what this Rune requires, for how can you exercise control over what is not yet in form? And what is coming to be can never arise from the known. Once again, this Rune often calls for no less an act of courage than the empty-handed leap into the void. Drawing it is a direct test of Faith. If karma is the sum total of what you have done, the limits on what you are and will become, then it may be useful to see in this Rune the path of karma. Yet from the runic perspective, even the very debts of old karma shift and evolve as you shift and evolve. Nothing is predestined; there is nothing that can- not be avoided. And if, indeed, there are 'matters hidden by  the gods,' you need only remember: what beckons is the creative power of the unknown. Whenever this Rune appears in your spread, take heart: it is the source from which flows the energy for self-change. Know that the work of self- transformation is progressing in your life.",
-    //     reversed: 
-    //     ""},
-    //   reversible: false,
-    // },
+    }
   ],
 }
