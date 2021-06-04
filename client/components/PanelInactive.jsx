@@ -9,7 +9,7 @@ const redPanel =
 // TYPOGRAPHY
 const inactiveH1 = "pb-10 font-semibold text-5xl text-redDark uppercase"
 const inactiveH3 = "pt-10 font-semibold text-2xl text-redDark uppercase"
-const selectButton = "font-semibold text-2xl text-redDark hover:text-redLight focus:outline-none"
+const selectButton = "font-semibold text-2xl text-redDark hover:text-redLight focus:outline-none transition duration-200 ease-out"
 
 //SEQUENCE
 const drawTitle = ['First', 'Second', 'Third']

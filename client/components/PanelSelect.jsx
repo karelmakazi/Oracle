@@ -6,7 +6,7 @@ const whitePanel =
   "flex flex-col h-cardInnerH w-cardInnerW rounded-lg border-4 border-redDark text-center justify-center"
 const runePanel = "px-6 flex flex-row flex-wrap gap-2 justify-center"
 const selectH1 = "pb-5 font-semibold text-4xl text-redDark"
-const svgStyle = 'fill-current text-redMid hover:text-redDark'
+const svgStyle = 'fill-current text-redMid hover:text-redDark transition duration-200 ease-out'
 
 
 function PanelSelect({ runeData, selectHandler }) {

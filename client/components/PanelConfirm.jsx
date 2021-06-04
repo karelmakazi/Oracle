@@ -4,7 +4,7 @@ import VectorFrame from "./VectorFrame"
 const selectPanel =
   "flex flex-col h-cardInnerH w-cardInnerW rounded-lg border-4 border-redDark text-center justify-center"
 const runeName = "pb-3 font-semibold text-5xl text-redDark uppercase"
-const runeOptions = "font-semibold text-xl uppercase text-redMid hover:text-redDark focus:outline-none"
+const runeOptions = "font-semibold text-xl uppercase text-redMid hover:text-redDark focus:outline-none transition duration-200 ease-out"
 const svgStyle = "fill-current text-redDark"
 
 

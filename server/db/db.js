@@ -17,9 +17,8 @@ function getJournalSpread(db = connection) {
 }
 
 function addSpread(spread, db = connection) {
-  const matchedSpread = spreadTableMatch(spread)
   return db('spreads')
-    .insert(matchedSpread)
+    .insert(spread)
     .then((id) => {
       return id
     })
